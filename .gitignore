@@ -1,3 +1,6 @@
+*.doc
+*.html
 *.odt
 *.pdf
 .*.stamp
+.*.sw?
