@@ -507,3 +507,12 @@ STD.8.6 has been deprecated in CGL 5.0.
 STD.8.7 has been deprecated in CGL 5.0.
 ---------------------------------------
 
+==================
+CGL 5.1 DEPRECATED
+==================
+
+SMM.7.9 has been deprecated is CGL 5.0.1
+----------------------------------------
+
+GAP.12.0 has been deprecated is CGL 5.0.1
+-----------------------------------------

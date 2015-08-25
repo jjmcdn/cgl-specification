@@ -35,18 +35,18 @@ AVL.14.0 Excessive CPU Cycle Usage Detection
 +=========+==========+=========================================================+
 | GAP.3.0 | AVL.14.0 | Excessive CPU Cycle Usage Detection                     |
 +---------+----------+---------------------------------------------------------+
-| CGL specifies that carrier grade Linux shall provide a mechanism that        |
-| detects excessive CPU cycle usage by any process or thread. To enable        |
-| detection, the following capabilities shall be provided:                     |
+|  CGL specifies that carrier grade Linux shall provide a mechanism that       |
+|  detects excessive CPU cycle usage by any process or thread. To enable       |
+|  detection, the following capabilities shall be provided:                    |
 |                                                                              |
-|    - Communication between the monitoring process and the kernel.            |
-|    - Registering a list of processes or threads and their allowed CPU        |
-|      cycle thresholds.                                                       |
-|    - Ability to define policy based on process events including              |
-|      process/thread creation and exit.                                       |
-|    - Ability to take action whenever an event occurs.                        |
-|    - Ability to set the CPU cycle threshold to a resolution of one           |
-|      millisecond.                                                            |
+|     - Communication between the monitoring process and the kernel.           |
+|     - Registering a list of processes or threads and their allowed CPU       |
+|       cycle thresholds.                                                      |
+|     - Ability to define policy based on process events including             |
+|       process/thread creation and exit.                                      |
+|     - Ability to take action whenever an event occurs.                       |
+|     - Ability to set the CPU cycle threshold to a resolution of one          |
+|       millisecond.                                                           |
 +---------+----------+---------------------------------------------------------+
 
 AVL.28.0 Support of Mlocked Page Limits
@@ -71,7 +71,7 @@ AVL.29.0 Coarse Resource Enforcement
 +=========+==========+=========================================================+
 | GAP.5.0 | AVL.29.0 | Coarse Resource Enforcement                             |
 +---------+----------+---------------------------------------------------------+
-|  The CGOS needs to provide mechanisms that allow resource consumption        |
+|  The |CGOS| needs to provide mechanisms that allow resource consumption      |
 |  constraints to be applied to an individual thread, a process and all        |
 |  processes running with a particular user ID or group ID, when resource      |
 |  consumption limits are exceeded.                                            |
@@ -92,11 +92,11 @@ CAF.2.3 Deliberate TCP Session Takeover
 +=========+==========+=========================================================+
 | GAP.6.0 | CAF.2.3  | Deliberate TCP Session Takeover                         |
 +---------+----------+---------------------------------------------------------+
-|   CGL specifies a mechanism to synchronize TCP sockets, buffer               |
-|   structures, and sequence numbers so that redundant nodes may take over     |
-|   TCP sessions originated on other nodes. A deliberate TCP session           |
-|   takeover assumes that TCP session(s) are transferred deliberately and      |
-|   not as the result of unexpected node failure(s).                           |
+|  CGL specifies a mechanism to synchronize TCP sockets, buffer                |
+|  structures, and sequence numbers so that redundant nodes may take over      |
+|  TCP sessions originated on other nodes. A deliberate TCP session            |
+|  takeover assumes that TCP session(s) are transferred deliberately and       |
+|  not as the result of unexpected node failure(s).                            |
 +---------+----------+---------------------------------------------------------+
 
 CAF.2.4 TCP Session Takeover on Node Failure
@@ -183,37 +183,57 @@ SMM.7.9 Support for Precise Process Accounting
 +---------------+---------------+----------------------------------------------+
 | ID            | PID           |       Name                                   |
 +===============+===============+==============================================+
-| GAP.12.0      | SMM.7.9       | Support for Precise Process Accounting       |
+| GAP.12.1      | SMM.7.9       | Support for Precise Process Accounting       |
 +---------------+---------------+----------------------------------------------+
 |  CGL specifies that carrier grade Linux shall support precise process        |
 |  accounting of CPU usage. This shall be accomplished by time stamping        |
 |  various kernel execution paths using the native platform high resolution    |
 |  counter. This accounting activity shall be run-time configurable,           |
-|  including partial or total disabling, via the proc file system. When        |
+|  including partial or total disabling, via the ``proc`` file system. When    |
 |  totally disabled no additional overhead will be measurable. Disabling or    |
 |  enabling precise accounting shall not affect Linux native tick              |
-|  accounting. All data shall be accessible from the proc file system. For     |
-|  task perCPU metrics, a range of 1 through N rows may be configured such     |
+|  accounting. All data shall be accessible from the ``proc`` file system. For |
+|  task per-CPU metrics, a range of 1 through N rows may be configured such    |
 |  that each row accrues metrics for one CPU, a range in between 1 and N       |
 |  CPUs (all metrics summed together).  Where N is the number of logical       |
 |  CPUs. Additional Sub-requirements follow.                                   |
++---------------+---------------+----------------------------------------------+
+
+GAP.12.2 Precise Process Accounting: per-CPU metrics
+----------------------------------------------------
++---------------+---------------+----------------------------------------------+
+| ID            | PID           |       Name                                   |
++===============+===============+==============================================+
+| GAP.12.2      |               | Support for Precise Process Accounting:      |
+|               |               | per-CPU metrics                              |
++---------------+---------------+----------------------------------------------+
 |                                                                              |
-|  Sub-requirement 1: The following metrics shall be accrued on per-CPU        |
-|  basis:                                                                      |
+|  CGL specifies that carrier grade Linux shall accrue the following metrics   |
+|  on per-CPU basis:                                                           |
 |                                                                              |
 |  - Per task CPU usage user, system, interrupt (in tasks context), and        |
 |    time spent on run queue                                                   |
 |                                                                              |
-|  - System wide CPU usage idle, user, system, interrupt, softirq              |
+|  - System wide CPU usage idle, user, system, interrupt, ``softirq``          |
 |                                                                              |
 |  - Per task occurrence counts of system calls, signals, reschedules,         |
 |    voluntary blocks, preemption due to higher priority task and              |
 |    preemptions due to time slice expirations.                                |
 |                                                                              |
 |  - System wide occurrence counts of interrupts, system calls, signals,       |
-|    and softirqs, with softirqs grouped by types.                             |
-|                                                                              |
-|  Sub-requirement 2: A per task table of schedule latency counts shall be     |
+|    and ``softirqs``, with ``softirqs`` grouped by types.                     |
++---------------+---------------+----------------------------------------------+
+
+GAP.12.3 Precise Process Accounting: per-Task Scheduling Latency
+----------------------------------------------------------------
++---------------+---------------+----------------------------------------------+
+| ID            | PID           |       Name                                   |
++===============+===============+==============================================+
+| GAP.12.3      |               | Support for Precise Process Accounting:      |
+|               |               | per-Task Scheduling Latency                  |
++---------------+---------------+----------------------------------------------+
+|  CGL specifies that carrier grade Linux shall collect per-Task latency       |
+|  counts.  The per-Task table of schedule latency counts shall be             |
 |  implemented such that a schedule latency value is indexed into              |
 |  predetermined ranges, and the count for that range is incremented. For      |
 |  example a table size of three will correspond to three scheduling           |
@@ -226,9 +246,22 @@ SMM.7.9 Support for Precise Process Accounting
 |  - index 2: greater then 100 milliseconds The table size and ranges may      |
 |    be build time configurable                                                |
 |                                                                              |
-|  Sub-requirement 3: Certain OS timers and CPU caps may be configured to      |
-|  increment or expire precisely with the initial list being SIGXCPU,          |
-|  SIGVTALARM, SIGPROF.                                                        |
++---------------+---------------+----------------------------------------------+
+
+GAP.12.4 Precise Process Accounting: Configurable OS Timers and Caps
+--------------------------------------------------------------------
++---------------+---------------+----------------------------------------------+
+| ID            | PID           |       Name                                   |
++===============+===============+==============================================+
+| GAP.12.4      |               | Support for Precise Process Accounting:      |
+|               |               | Configurable OS Timers and Caps              |
++---------------+---------------+----------------------------------------------+
+|  CGL specifies that carrier grade Linux shall enable certain OS timers and   |
+|  CPU caps to be configured to increment or expire precisely                  |
+|  The minimal list of these are:                                              |
+|     - SIGXCPU                                                                |
+|     - SIGVTALARM                                                             |
+|     - SIGPROF                                                                |
 +---------------+---------------+----------------------------------------------+
 
 SMM.10.0 System Initialization Error Handling Enhancements
@@ -245,10 +278,10 @@ SMM.10.0 System Initialization Error Handling Enhancements
 |  remote system over the network. CGL further specifies the following         |
 |  error conditions shall apply to this requirement:                           |
 |                                                                              |
-|  - The kernel image fails before init is started                             |
+|  - The kernel image fails before ``init`` is started                         |
 |                                                                              |
-|  - The init process fails to fully complete the startup initialization to    |
-|    the point where the conventional error reporting mechanisms are           |
+|  - The ``init`` process fails to fully complete the startup initialization   |
+|    to the point where the conventional error reporting mechanisms are        |
 |    available                                                                 |
 +---------------+---------------+----------------------------------------------+
 
@@ -324,40 +357,40 @@ PRF.2.4 Support for Task Exclusive Bind to Logical CPU
 |    represents as a single processing unit to the user                        |
 +----------+--------------+----------------------------------------------------+
 
-PRF.11.1 Application (Pre)loading Non-Root
-------------------------------------------
+PRF.11.1 Application (Pre-)loading Non-Root
+-------------------------------------------
 +----------+----------+--------------------------------------------------------+
 | ID       | PID      | Name                                                   |
 +==========+==========+========================================================+
-| GAP.19.0 | PRF.11.1 | Application (Pre)loading Non-Root                      |
+| GAP.19.0 | PRF.11.1 | Application (Pre-)loading Non-Root                     |
 +----------+----------+--------------------------------------------------------+
 |  CGL specifies that carrier grade Linux shall provide support for the        |
-|  preloading of an application even when the application is not executing     |
+|  pre-loading of an application even when the application is not executing    |
 |  as root. A configuration capability must exist to allow the system          |
-|  loader to determine an application's eligible for preloading. The           |
-|  action of preloading an application must not overload the system            |
+|  loader to determine an application's eligible for pre-loading. The          |
+|  action of pre-loading an application must not overload the system           |
 |  memory. The configuration capability must provide a control that allows     |
 |  the application to specify what is to be done if it can't be                |
 |  pre-loaded. Options are:                                                    |
 |                                                                              |
-|  - Load anyway as a normal (pageable) application.                           |
-|  - Fail and don't load the application.                                      |
+|     - Load anyway as a normal (pageable) application.                        |
+|     - Fail and don't load the application.                                   |
 |                                                                              |
 |  Regardless of the option used, any failure to pre-load the application      |
 |  must be logged.                                                             |
 +----------+----------+--------------------------------------------------------+
 
-PRF.11.2 Application (Pre)loading Limits
-----------------------------------------
+PRF.11.2 Application (Pre-)loading Limits
+-----------------------------------------
 +----------+----------+--------------------------------------------------------+
 | ID       |  PID     | Name                                                   |
 +==========+==========+========================================================+
-| GAP.20.0 | PRF.11.2 | Application (Pre)loading Limits                        |
+| GAP.20.0 | PRF.11.2 | Application (Pre-)loading Limits                       |
 +----------+----------+--------------------------------------------------------+
 |  CGL specifies that carrier grade Linux shall provide mechanisms to          |
-|  avoid overloading a system when preloading applications. Specifically,      |
+|  avoid overloading a system when pre-loading applications. Specifically,     |
 |  it shall be possible to specify the total amount of memory reserved         |
-|  (pinned) by preloading applications.                                        |
+|  (pinned) by pre-loading applications.                                       |
 +----------+----------+--------------------------------------------------------+
 
 SEC.7.4 Execution Quotas
@@ -383,7 +416,7 @@ SEC.9.0  Unified Cryptographic Framework
 |  tamper-proof storage for security-relevant data such as keys, and           |
 |  registration of cryptographic capabilities.                                 |
 |                                                                              |
-|  The CGOS needs to provide a unified framework for optimized                 |
+|  The |CGOS| needs to provide a unified framework for optimized               |
 |  implementations of common cryptographic (encryption and message             |
 |  hashing) algorithms.                                                        |
 |                                                                              |
@@ -409,8 +442,7 @@ SEC.9.0  Unified Cryptographic Framework
 |  be loaded during system assembly, and additional keys can be provided       |
 |  using a secure mechanism after the system is started. Such a mechanism      |
 |  is almost always a combination of hardware, operating system and            |
-|  firmware. See also Trust Mechanisms (CGOS-3.1).                             |
-|                                                                              |
+|  firmware.                                                                   |
 |                                                                              |
 |  A unified cryptographic framework must expose to security providers a       |
 |  common interface to algorithms not only for various encryption              |
@@ -438,6 +470,12 @@ SEC.9.0  Unified Cryptographic Framework
 |  easily reduced to 56 bits, or cryptography must be easy to switch off.      |
 +----------+---------+---------------------------------------------------------+
 
+.. note:: Break up into sub-gaps
+   This is a prime candidate for breaking into sub-gaps.  My sense is at least
+   some of this is already implemented.
+
+   jjmac: (2015.08.14)
+
 STD.3.2.7 SCTP signing chunks
 -----------------------------
 +----------+---------------+---------------------------------------------------+
@@ -448,7 +486,7 @@ STD.3.2.7 SCTP signing chunks
 |  CGL specifies that carrier grade Linux shall provide the functionality      |
 |  listed in the Internet draft below.                                         |
 |                                                                              |
-|  - draft-ietf-tsvwg-sctp-auth-04.txt: allows an SCTP sender to sign          |
+|  - draft-ietf-tsvwg-sctp-auth-08.txt_: allows an SCTP sender to sign         |
 |    chunks using shared keys between the sender and receiver to prevent       |
 |    blind attacks against static Verification tag.                            |
 +----------+---------------+---------------------------------------------------+
@@ -476,11 +514,11 @@ GAP.25.0 Online File System Integrity and Consistency Checking
 | Linux Foundation CGL specifies that carrier grade Linux shall                |
 | provide support for a file system that allows data and metadata consistency  |
 | and integrity checking on a file system while mounted and in use with the    |
-| fsck or similar tool.                                                        |
+| ``fsck`` or similar tool.                                                    |
 |                                                                              |
 | This consistency and integrity checking should be more detailed than the     |
 | fast recovery integrity checks done from a partially completed update        |
-| described in AVL.X.2.                                                        |
+| described in AVL.28.3.                                                       |
 +----------+---------+---------------------------------------------------------+
 
 GAP.26.0 File System Resource Allocation Guarantees
@@ -520,7 +558,6 @@ GAP.28.0 Online File System Expansion
 +----------+---------+---------------------------------------------------------+
 | Linux Foundation CGL specifies that carrier grade Linux shall provide the    |
 | ability to expand a mounted file system without service interruption.        |
-|                                                                              |
 +----------+---------+---------------------------------------------------------+
 
 GAP.29.0 Online File System Reduction
@@ -715,6 +752,11 @@ GAP.41.0 Persistent Shared Memory
 | such data from system crashes and across system reboots.                     |
 +---------+----------+---------------------------------------------------------+
 
+.. note:: Implemented
+   I believe this is implemented by either ``pstore`` or ``pramfs``, discuss.
+
+   jjmac: (2015.08.25)
+
 GAP.42.0 Coarse Resource Enforcement
 ------------------------------------
 +----------+---------+---------------------------------------------------------+
@@ -731,11 +773,11 @@ GAP.42.0 Coarse Resource Enforcement
 | selected when the process or thread is first started.  These actions must at |
 | least include:                                                               |
 |                                                                              |
-|   * Log - Allow the resource overstep to continue but report it via the      |
+|   - Log - Allow the resource overstep to continue but report it via the      |
 |     normal system event reporting mechanism.                                 |
-|   * Signal - Allow the resource overstep to continue but send a pre-defined  |
+|   - Signal - Allow the resource overstep to continue but send a pre-defined  |
 |     signal to the thread/process.                                            |
-|   * Terminate - Do not allow the resource overstep to occur, instead         |
+|   - Terminate - Do not allow the resource overstep to occur, instead         |
 |     terminate the thread/process.                                            |
 |                                                                              |
 | The resource consumption limits must be applied to at least CPU time and     |
@@ -759,8 +801,12 @@ GAP.43.0 API for Non-Uniform Memory Architectures: Domain Binding
 | to a specific latency domain.  An application must be able to specify the    |
 | binding policy, with at least the following policies available:              |
 |                                                                              |
-|   * Opportunistic - A process will only migrate to a new latency domain if   |
+|   - Opportunistic - A process will only migrate to a new latency domain if   |
 |     it is unable to execute in the current latency domain.                   |
-|   * Strict - A process will never migrate to a new latency domain even if it |
+|   - Strict - A process will never migrate to a new latency domain even if it |
 |     would otherwise be unable to continue execution.                         |
 +---------+----------+---------------------------------------------------------+
+
+
+.. |CGOS| replace:: *Carrier Grade Operating System*
+.. _draft-ietf-tsvwg-sctp-auth-08.txt: https://tools.ietf.org/html/draft-ietf-tsvwg-sctp-auth-08

@@ -605,7 +605,7 @@ AVL.28.2 Multi-Architecture File System Support
 |                                                                              |
 | Reference: SCOPE Alliance Carrier Grade Gap CGOS-1.9                         |
 |                                                                              |
-| PoC: ext2, ext3, etc.                                                        |
+| |PoC|: ext2, ext3, etc.                                                      |
 +------------+-----------------------------------+----------------+------------+
 
 AVL.28.3 File System Metadata Integrity Checksum
@@ -623,7 +623,7 @@ AVL.28.3 File System Metadata Integrity Checksum
 |                                                                              |
 | Reference: SCOPE Alliance Carrier Grade Gap CGOS-1.2                         |
 |                                                                              |
-| PoC: ext4, BTRFS                                                             |
+| |PoC|: ext4, BTRFS                                                           |
 +------------+-----------------------------------+----------------+------------+
 
 AVL.28.4 File System Block Checksumming
@@ -639,7 +639,7 @@ AVL.28.4 File System Block Checksumming
 |                                                                              |
 | Reference: SCOPE Alliance Carrier Grade Gap CGOS-1.1                         |
 |                                                                              |
-| PoC: BTRFS, ZFS on FUSE                                                      |
+| |PoC|: BTRFS, ZFS on FUSE                                                    |
 +------------+-----------------------------------+----------------+------------+
 
 AVL.28.5 File System Multiple Access Protection
@@ -1233,7 +1233,7 @@ SMM.15 Thread Naming
 |                                                                              |
 | Reference: SCOPE Alliance Carrier Grade Gap CGOS_V3-3.0                      |
 |                                                                              |
-| PoC: Linux kernel                                                            |
+| |PoC|: Linux kernel                                                          |
 +----------------+---------------------+----------------------+----------------+
 
 SMM.16 System Black Box
@@ -1274,7 +1274,7 @@ SMM.17 Discovery of Platform CPU Architecture
 |                                                                              |
 | Reference: SCOPE Alliance Carrier Grade Gap CGOS-6.1                         |
 |                                                                              |
-| PoC: sysfs                                                                   |
+| |PoC|: sysfs                                                                 |
 +------------+-------------------------------+-------------------+-------------+
 
 SMM.18 API for Non-Uniform Memory Architectures
@@ -1307,7 +1307,7 @@ SMM.18 API for Non-Uniform Memory Architectures
 |                                                                              |
 | Reference: SCOPE Alliance Carrier Grade Gap CGOS-6.2                         |
 |                                                                              |
-| PoC: libnuma                                                                 |
+| |PoC|: libnuma                                                               |
 +------------+--------------------------------+-------------------+------------+
 
 SPM.1.0 Remote Package Update and Installation
@@ -1969,7 +1969,6 @@ STD.4.2.5 IPv6 Additional Features: RFC 3633 Prefix Options for Dynamic Host Con
 
 STD.4.2.6 IPv6 Additional Features: RFC 4191_ Default Router Preferences
 ------------------------------------------------------------------------
-
 +---------------+-------------------------------------+-------------+----------+
 | ID            |       Name                          |   Category  | Priority |
 +===============+=====================================+=============+==========+
@@ -2055,7 +2054,7 @@ STD.4.2.13 IPv6 Additional Features: NFS
 |                                                                              |
 | Reference: SCOPE Alliance Carrier Grade Gap CGOS-5.2                         |
 |                                                                              |
-| PoC: Mainline kernel and NFSv4                                               |
+| |PoC|: Mainline kernel and NFSv4                                             |
 | / http://wiki.linux-nfs.org/wiki/index.php/Ipv6PlanningDocument              |
 +--------------+-----------------------------------+--------------+------------+
 
@@ -2579,7 +2578,7 @@ STD.26.1 Layer 2 Tunneling Protocol Support
 |                                                                              |
 | Reference: SCOPE Alliance Carrier Grade Gap CGOS-5.3                         |
 |                                                                              |
-| PoC: Mainline kernel.                                                        |
+| |PoC|: Mainline kernel.                                                      |
 +-----------+---------------------------------------+-------------+------------+
 
 STD.26.2 Layer 2 Tunneling Protocol Support Version 3
@@ -2596,7 +2595,7 @@ STD.26.2 Layer 2 Tunneling Protocol Support Version 3
 |                                                                              |
 | Reference: SCOPE Alliance Carrier Grade Gap CGOS-5.3                         |
 |                                                                              |
-| PoC: Mainline kernel.                                                        |
+| |PoC|: Mainline kernel.                                                      |
 +-----------+---------------------------------------+-------------+------------+
 
 Security Requirements
@@ -2945,7 +2944,7 @@ SEC.9.1 Role-Based Access Control
 |                                                                              |
 | Reference: SCOPE Alliance Carrier Grade Gap CGOS-3.4                         |
 |                                                                              |
-| PoC: SELinux                                                                 |
+| |PoC|: SELinux                                                               |
 +--------------+---------------------------------+--------------+--------------+
 
 SEC.9.2 Advanced Role-Based Access Control
@@ -2963,7 +2962,7 @@ SEC.9.2 Advanced Role-Based Access Control
 | Reference: SCOPE Alliance Carrier Grade Gap CGOS-3.4,                        |
 | http://www.commoncriteriaportal.org/files/ppfiles/RBAC_987.pdf               |
 |                                                                              |
-| PoC:  SELinux                                                                |
+| |PoC|: SELinux                                                               |
 +--------------+---------------------------------+--------------+--------------+
 
 SEC.10 Tamper-Resistant Storage
@@ -3007,7 +3006,7 @@ SEC.11.1 File Access Tracing
 |                                                                              |
 | Reference: SCOPE Alliance Carrier Grade Gap CGOS_V3-2.0                      |
 |                                                                              |
-| PoC: Linux Audit Framework                                                   |
+| |PoC|: Linux Audit Framework                                                 |
 +--------------+----------------------------+-----------------+----------------+
 
 SEC.11.2 File Access Tracing: Limiting
@@ -3024,7 +3023,7 @@ SEC.11.2 File Access Tracing: Limiting
 |                                                                              |
 | Reference: SCOPE Alliance Carrier Grade Gap CGOS_V3-2.0                      |
 |                                                                              |
-| PoC:  AIDE, Samhain, GRSecurity                                              |
+| |PoC|: AIDE, Samhain, GRSecurity                                             |
 +-------------+-----------------------------------+-------------+--------------+
 
 Hardware Requirements
@@ -3071,3 +3070,5 @@ PMS.5.3 iSCSI Target Discovery
 |  Linux shall support the SendTargets Discovery mechanism to discover         |
 |  potential iSCSI targets they can connect. See STD.17.0 iSCSI.               |
 +---------------+-------------------------------------+-------------+----------+
+
+.. |PoC| replace:: Proof-of-Concept
