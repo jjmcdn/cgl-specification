@@ -14,7 +14,6 @@ RST2ODTOPTS = \
 RST2PDFOPTS = \
 				  --first-page-on-right \
 				  --inline-footnotes \
-				  --repeat-table-rows \
 				  --smart-quotes=1 \
 				  --stylesheets="./rst2pdf.css"
 
@@ -32,7 +31,12 @@ RST2HTMLOPTS = \
 					--table-style=borderless \
 					--toc-entry-backlinks
 
-all: requirements gaps deprecated
+all: specification requirements gaps deprecated
+
+specification: specification.stamp
+	rst2odt ${RST2ODTOPTS} --title "CGL 5.0.1(draft) Requirements" cgl_5.0_specification.rst cgl_5.0_specification.odt
+	rst2pdf $(RST2PDFOPTS) cgl_5.0_specification.rst -o cgl_5.0_specification.pdf
+	rst2html $(RST2HTMLOPTS) cgl_5.0_specification.rst cgl_5.0_specification.html
 
 requirements: requirements.stamp
 	rst2odt ${RST2ODTOPTS} --title "CGL 5.0.1(draft) Requirements" cgl_5.0_requirements.rst cgl_5.0_requirements.odt
@@ -49,6 +53,9 @@ deprecated: deprecated.stamp
 	rst2pdf $(RST2PDFOPTS) cgl_5.0_deprecated.rst -o cgl_5.0_deprecated.pdf
 	rst2html $(RST2HTMLOPTS) cgl_5.0_deprecated.rst cgl_5.0_deprecated.html
 
+specification.stamp:
+		touch .specification.stamp
+
 requirements.stamp:
 		touch .requirements.stamp
 
@@ -59,4 +66,4 @@ deprecated.stamp:
 		touch .deprecated.stamp
 
 clean:
-	rm -f .*.stamp *.odt
+	rm -f .*.stamp *.odt *.html *.pdf

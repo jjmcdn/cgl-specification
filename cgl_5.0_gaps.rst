@@ -1,8 +1,12 @@
-============
 CGL 5.0 GAPS
 ============
 
-.. contents::
+Following are the features or aspects of Carrier Grade Linux that, at the time
+of this publication, the CGL Workgroup has identified as un-implemented in the
+open source community or has not been widely adopted and proven ready for
+carrier grade applications. These features are listed here to provide
+information for developers and distribution vendors on key areas of
+differentiation that are of particular interest to carriers.
 
 AVL.3.2 Forced Un-mount
 -----------------------
@@ -259,9 +263,10 @@ GAP.12.4 Precise Process Accounting: Configurable OS Timers and Caps
 |  CGL specifies that carrier grade Linux shall enable certain OS timers and   |
 |  CPU caps to be configured to increment or expire precisely                  |
 |  The minimal list of these are:                                              |
-|     - SIGXCPU                                                                |
-|     - SIGVTALARM                                                             |
-|     - SIGPROF                                                                |
+|                                                                              |
+|  - SIGXCPU                                                                   |
+|  - SIGVTALARM                                                                |
+|  - SIGPROF                                                                   |
 +---------------+---------------+----------------------------------------------+
 
 SMM.10.0 System Initialization Error Handling Enhancements

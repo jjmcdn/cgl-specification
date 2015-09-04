@@ -1,111 +1,95 @@
-====================
-CGL 5.0 Requirements
-====================
+Availability Requirements Definition
+....................................
 
-.. contents::
+Telecommunication customers expect their voice and data services to always be
+available. System availability is dependent on the availability of individual
+components in the system. To help ensure 24/7 service, it must be possible to
+perform system maintenance and system expansion on running telecommunication
+networks and servers without disrupting the services they implement. Systems
+must be able to withstand component failures, making redundancy of components
+such as power supplies, fans, network adapters, storage, and storage paths
+essential. Software failures can also significantly impact the availability of a
+compute node, so robust application software, middleware, and operating system
+software is required for single node availability.
 
-.. _1155: http://www.ietf.org/rfc/rfc1155.txt
-.. _1157: http://www.ietf.org/rfc/rfc1155.txt
-.. _1901: http://www.ietf.org/rfc/rfc1901.txt
-.. _1908: http://www.ietf.org/rfc/rfc1908.txt
-.. _1213: http://www.ietf.org/rfc/rfc1213.txt
-.. _1227: http://www.ietf.org/rfc/rfc1227.txt
-.. _1886: http://www.ietf.org/rfc/rfc1886.txt
-.. _1981: http://www.ietf.org/rfc/rfc1981.txt
-.. _2011: http://www.ietf.org/rfc/rfc2011.txt
-.. _2012: http://www.ietf.org/rfc/rfc2012.txt
-.. _2013: http://www.ietf.org/rfc/rfc2013.txt
-.. _2096: http://www.ietf.org/rfc/rfc2096.txt
-.. _2367: http://www.ietf.org/rfc/rfc2367.txt
-.. _2401: http://www.ietf.org/rfc/rfc2401.txt
-.. _2402: http://www.ietf.org/rfc/rfc2402.txt
-.. _2403: http://www.ietf.org/rfc/rfc2403.txt
-.. _2404: http://www.ietf.org/rfc/rfc2404.txt
-.. _2405: http://www.ietf.org/rfc/rfc2405.txt
-.. _2406: http://www.ietf.org/rfc/rfc2406.txt
-.. _2409: http://www.ietf.org/rfc/rfc2409.txt
-.. _2410: http://www.ietf.org/rfc/rfc2410.txt
-.. _2428: http://www.ietf.org/rfc/rfc2428.txt
-.. _2451: http://www.ietf.org/rfc/rfc2451.txt
-.. _2452: http://www.ietf.org/rfc/rfc2452.txt
-.. _2454: http://www.ietf.org/rfc/rfc2454.txt
-.. _2460: http://www.ietf.org/rfc/rfc2460.txt
-.. _2461: http://www.ietf.org/rfc/rfc2461.txt
-.. _2462: http://www.ietf.org/rfc/rfc2462.txt
-.. _2463: http://www.ietf.org/rfc/rfc2463.txt
-.. _2465: http://www.ietf.org/rfc/rfc2465.txt
-.. _2012: http://www.ietf.org/rfc/rfc2012.txt
-.. _2466: http://www.ietf.org/rfc/rfc2466.txt
-.. _2474: http://www.ietf.org/rfc/rfc2474.txt
-.. _2475: http://www.ietf.org/rfc/rfc2475.txt
-.. _2527: http://www.ietf.org/rfc/rfc2527.txt
-.. _2571: http://www.ietf.org/rfc/rfc2571.txt
-.. _2575: http://www.ietf.org/rfc/rfc2575.txt
-.. _2576: http://www.ietf.org/rfc/rfc2576.txt
-.. _2578: http://www.ietf.org/rfc/rfc2578.txt
-.. _2579: http://www.ietf.org/rfc/rfc2579.txt
-.. _2580: http://www.ietf.org/rfc/rfc2580.txt
-.. _2585: http://www.ietf.org/rfc/rfc2585.txt
-.. _2665: http://www.ietf.org/rfc/rfc2665.txt
-.. _2710: http://www.ietf.org/rfc/rfc2710.txt
-.. _2742: http://www.ietf.org/rfc/rfc2742.txt
-.. _2788: http://www.ietf.org/rfc/rfc2788.txt
-.. _2789: http://www.ietf.org/rfc/rfc2789.txt
-.. _2790: http://www.ietf.org/rfc/rfc2790.txt
-.. _2819: http://www.ietf.org/rfc/rfc2819.txt
-.. _2856: http://www.ietf.org/rfc/rfc2856.txt
-.. _2863: http://www.ietf.org/rfc/rfc2863.txt
-.. _2864: http://www.ietf.org/rfc/rfc2864.txt
-.. _2874: http://www.ietf.org/rfc/rfc2874.txt
-.. _2893: http://www.ietf.org/rfc/rfc2893.txt
-.. _2960: http://www.ietf.org/rfc/rfc2960.txt
-.. _3165: http://www.ietf.org/rfc/rfc3165.txt
-.. _3231: http://www.ietf.org/rfc/rfc3231.txt
-.. _3270: http://www.ietf.org/rfc/rfc3270.txt
-.. _3279: http://www.ietf.org/rfc/rfc3279.txt
-.. _3280: http://www.ietf.org/rfc/rfc3280.txt
-.. _3291: http://www.ietf.org/rfc/rfc3291.txt
-.. _3309: http://www.ietf.org/rfc/rfc3309.txt
-.. _3315: http://www.ietf.org/rfc/rfc3315.txt
-.. _3411: http://www.ietf.org/rfc/rfc3411.txt
-.. _3412: http://www.ietf.org/rfc/rfc3412.txt
-.. _3413: http://www.ietf.org/rfc/rfc3413.txt
-.. _3414: http://www.ietf.org/rfc/rfc3414.txt
-.. _3415: http://www.ietf.org/rfc/rfc3415.txt
-.. _3417: http://www.ietf.org/rfc/rfc3417.txt
-.. _3418: http://www.ietf.org/rfc/rfc3418.txt
-.. _3484: http://www.ietf.org/rfc/rfc3484.txt
-.. _3493: http://www.ietf.org/rfc/rfc3493.txt
-.. _3542: http://www.ietf.org/rfc/rfc3542.txt
-.. _3587: http://www.ietf.org/rfc/rfc3587.txt
-.. _3588: http://www.ietf.org/rfc/rfc3588.txt
-.. _3596: http://www.ietf.org/rfc/rfc3596.txt
-.. _3633: http://www.ietf.org/rfc/rfc3633.txt
-.. _3646: http://www.ietf.org/rfc/rfc3646.txt
-.. _3720: http://www.ietf.org/rfc/rfc3720.txt
-.. _3721: http://www.ietf.org/rfc/rfc3721.txt
-.. _3723: http://www.ietf.org/rfc/rfc3723.txt
-.. _3758: http://www.ietf.org/rfc/rfc3758.txt
-.. _3775: http://www.ietf.org/rfc/rfc3775.txt
-.. _3776: http://www.ietf.org/rfc/rfc3776.txt
-.. _3810: http://www.ietf.org/rfc/rfc3810.txt
-.. _3873: http://www.ietf.org/rfc/rfc3873.txt
-.. _4191: http://www.ietf.org/rfc/rfc4191.txt
-.. _4213: http://www.ietf.org/rfc/rfc4213.txt
-.. _4301: http://www.ietf.org/rfc/rfc4301.txt
-.. _4302: http://www.ietf.org/rfc/rfc4302.txt
-.. _4303: http://www.ietf.org/rfc/rfc4303.txt
-.. _4305: http://www.ietf.org/rfc/rfc4305.txt
-.. _4307: http://www.ietf.org/rfc/rfc4307.txt
-.. _4322: http://www.ietf.org/rfc/rfc4322.txt
-.. _4434: http://www.ietf.org/rfc/rfc4434.txt
-.. _4460: http://www.ietf.org/rfc/rfc4460.txt
+Single Node Availability Categories
+===================================
 
+This section is a collection of requirements that address the robustness of a
+single computing node. Availability is further enhanced by clustering individual
+computing nodes so that a node cannot represent a single point of failure. The
+single node requirements in the Availability section can be categorized as:
+
+   - On-line operations
+
+   - Redundancy
+
+   - Monitoring
+
+   - Robustness
+
+On-Line Operations
+------------------
+
+On-line operations enable the system to continue to provide a service while the
+software or the hardware is replaced or upgraded on the system. For instance,
+when a file system needs repair, repair procedures may require rebooting the
+system. However, CGL requires that it be possible to forcibly un-mount a file
+system, allowing repair and remounting without rebooting. The ability to replace
+or upgrade hardware such as disks, processors, memory, or even entire
+processor/memory blades without bringing down that node or the network
+contributes significantly to continuous service availability.
+
+Redundancy
+----------
+
+A highly available system must be composed of redundant components and must
+be able to take advantage of redundant hardware such that the system continues
+to function when a component fails. Ideally, designs can eliminate all single
+points of failure from a system. Using redundant communication paths, such as
+redundant network ports and host adapters, together with network fail-over
+software capabilities, such as Ethernet bonding, improve network availability.
+Redundant storage paths, such as redundant fiber channel ports and host
+adapters used with multipath I/O, improve storage availability. Redundancy of
+memory components may not be possible, but error detection and correction can
+be used to mask memory cell failures; CGL requires software Error Correction
+Code (ECC) support. Single bit errors are reported when they are detected in the
+hardware and logged by the kernel. The kernel invokes a panic routine whenever
+uncorrectable multi-bit errors are detected.
+
+Monitoring
+----------
+
+Rapid detection of hardware or software failures requires health monitoring.
+Health monitoring is also needed to check for hardware or software that is
+beginning to fail, such as ECC memory checking, predictive analysis for disks,
+and processes that do not respond in a predicted way. Examples of CGL
+monitoring requirements include Non-Intrusive Monitoring of Processes and
+Memory Over-commit Actions. The Non-Intrusive Monitoring of Processes
+requirement detects abnormal behavior by a process, such as process death,
+and initiates an action, such as the creation of a new process. The Memory Over-
+commit Actions requirement monitors system memory usage and controls
+process activity when memory usage exceeds specified thresholds.
+
+Robustness
+----------
+
+A highly available system must be composed of redundant components and must
+be able to take advantage of redundant hardware such that the system continues
+to function when a component fails. Ideally, designs can eliminate all single
+points of failure from a system. Using redundant communication paths, such as
+redundant network ports and host adapters, together with network fail-over
+software capabilities, such as Ethernet bonding, improve network availability.
+Redundant storage paths, such as redundant fiber channel ports and host
+adapters used with multipath I/O, improve storage availability. Redundancy of
+memory components may not be possible, but error detection and correction can
+be used to mask memory cell failures; CGL requires software Error Correction
+Code (ECC) support. Single bit errors are reported when they are detected in the
+hardware and logged by the kernel. The kernel invokes a panic routine whenever
+uncorrectable multi-bit errors are detected.
 
 Availability Requirements
 =========================
-
-.. |avl| replace:: Availability
 
 AVL.2.0 Single-bit ECC handling
 -------------------------------
@@ -689,10 +673,253 @@ AVL.28.7 File System Clones
 | Reference: SCOPE Alliance Carrier Grade Gap CGOS-1.7                         |
 +---------------+--------------------------+-------------------+---------------+
 
+Availability References
+=======================
+
+POSIX:
+   - Open Group References:
+
+     http://www.opengroup.org/
+
+     http://www.unix.org/online.html
+
+     http://www.opengroup.org/onlinepubs/007908799/
+
+   - POSIX conformance data on Linux:
+
+     http://posixtest.sf.net
+
+   - POSIX Technical Corrigendum 1 text:
+
+     http://www.opengroup.org/pubs/catalog/u057.htm
+
+   - POSIX Specification with current Technical Corrigendum:
+
+     http://www.unix.org/version3/
+
+Linux Standard Base (LSB) http://www.linuxbase.org/
+
+Free Standards Group http://www.freestandards.org/
+
+Service Availability Forum (SAF) http://www.saforum.org/
+
+Internet Engineering Task Force (IETF) http://www.ietf.org/rfc.html
+
+Clustering Requirements Definition
+..................................
+
+The CGL working group conducted a clusters usage model study from which they
+learned that no single clustering model meets the needs of all carrier
+applications. So CGL takes a more general approach to defining clustering
+requirements. CGL defines the functional components of a carrier grade High
+Availability Cluster (HAC). The requirements for other cluster models, such as a
+scalability cluster, a server consolidation cluster, and a High Performance
+Computing (HPC) cluster, have been treated as secondary to requirements for
+the HAC cluster model. See Illustration 3.
+
+.. figure:: CGL_5.0_Specification-004.jpg
+   :width: 8cm
+
+   Illustration 3: HAC Cluster View
+
+A CGL high availability cluster is characterized by a set of two or more
+computing nodes between which an application or workload can migrate depending
+on a policy-based failover mechanism. Essentially, the cluster nodes can “cover”
+for each other. Carrier grade services must maintain an uptime of 5 nines
+(99.999%) or better and, quite often, a failing service must restart in
+sub-second time frames to maintain continuous operation.
+
+A loosely coupled cluster model with no shared storage is a basic clustering
+technique that is suitable for many types of telecommunications applications
+servers. This model eliminates the possibility of a failed shared component
+affecting the availability of the service or the availability of system.
+
+Whether shared storage is implied or not, a cluster provides the following
+advantages:
+
+   * Prevents a node from being a single point of failure. With hardware faults,
+     the failing node can be replaced or repaired without affecting the service
+     uptime (no unscheduled downtime)
+
+   * Allows a software or kernel upgrade to be completed on each node separately
+     without affecting the availability of the service
+
+   * Isolates failing nodes from the cluster and enables service to continue
+     using the remaining healthy nodes
+
+   * Allows hardware upgrades on each node separately without affecting service
+     availability
+
+   * Enables increased capacity to meet load/traffic increases
+
+CGL clustering functional requirements include support for redundancy (no single
+point of failure), not only at the cluster node level, but at the hardware level
+as well, including fans, power supplies, memory ECC, communication paths, and
+storage paths. To support continuous operation of carrier grade services,
+requirements are defined for node failure detection and various forms of service
+failover, such as application, node address, and connections failovers.
+
+The CGL clustering requirements are framed around industry standard programming
+interfaces. The Service Availability Forum (SA Forum) has developed an
+Application Interface Specification (AIS) that defines service interfaces for
+clustered applications. The specification is OS-independent and is being used in
+both proprietary and open source cluster developments. The SA Forum AIS
+specifies a membership service API, a checkpoint service API, an event service
+API, a message service API, and a lock service API. AIS also specify an
+availability management framework (AMF) that provides resource management and
+application failover policy in the cluster.
+
+CGL Clustering Environment
+==========================
+
+As stated previously, we learned from our usage model study that no one
+clustering model fits and meets the needs of all carrier applications. We are
+not going to create such model. Instead, a more generalized CGL clustering model
+is presented in this document that serves to identify the functional need of
+each component of a High Availability Cluster environment. This general model is
+illustrated in the diagram below, which shows the need for redundancy, stateful
+failover, and shared storage in a cluster application. This diagram is *not* a
+topology of any specific cluster deployment. It is up to application developers
+and system administrators to determine the usage and configuration of their
+cluster systems.
+
+The functions shown in Illustration 3 are described below:
+
+   * **1+1 Hot Standby Cluster** is composed of one active primary node and one
+     hot standby node and possibly a set of shared storage. It includes
+     redundant paths between cluster nodes and to the storage.
+
+   * **Shared Storage** provides a set of mirrored disks (for redundant data)
+     and can be achieved with software or hardware.
+
+   * **Redundant Paths** include the multiple communication paths between
+     cluster nodes (CCPs) and the multiple paths from a node to access the
+     storage (CSPs).
+
+   * **N+M Cluster** is the extension of a 1+1 hot standby cluster. In this
+     model, the cluster can be configured with additional hot or cold standby
+     nodes as needed by the application. Functional needs of the data check
+     pointing capability and the access to the shared storage remain the same.
+
+   * **Data Check Pointing** is part of the cluster services. It constantly
+     synchronizes the in-memory states and data of an application allowing the
+     cluster to provide stateful failover of the application from one node to
+     another node.
+
+   * **Access Shared Storage** – A cluster application stores and retrieves
+     application data to and from the redundant shared storage. These data are
+     persistent on the mirrored disks.
+
+   * **Service Entry Point Director** routes and directs which cluster node
+     shall provide the service to the service requester.
+
+   * **Cluster Management Console** is a node in the system that manages all
+     cluster nodes, but is not part of the cluster membership. It provides a
+     view of the cluster to an operator. It monitors the hardware status of the
+     cluster nodes and monitors cluster events such as cluster node failure. The
+     operator can use it to perform some cluster node failure recovery
+     functions, such as the re-boot of a cluster node allowing the node to re-
+     join the cluster membership.
+
+   * **Users** are the service requesters. A user can be a human being, an
+     external device, or another computer system .
+
+End users of carrier grade equipment have prioritized the need for HAC cluster
+configurations as:
+
+   * 2-node (active/hot standby) cluster that support
+      * Checkpointing of in-memory application states for rapid application
+        failover
+
+      * Shared storage access from a single node at a time.
+
+      * Redundant access to shared storage from a single node
+
+      * Redundant inter-node communication paths
+
+   * 2-node (active/active) cluster that support
+      * Concurrent access to shared storage.
+
+   * N node (active/active) cluster that support
+      * Storage “scalability”
+
+      * Improved service performance in accessing shared storage.
+
+   * N+M node (active/hot or cold standby) cluster that support
+      * Extension of active/standby pair.
+
+Rationale for CGL Clustering Requirements
+=========================================
+
+The requirements described in this section are intended to be independent of
+specific projects, products, or implementations.
+
+The cluster requirements are framed around industry standard application
+programming interfaces. For these clustering requirements, the SA Forum
+Application Interface Specification will be used. The SA Forum AIS services that
+apply to this specification are:
+
+   * SA Cluster Membership Service API (Chapter 6)
+
+   * SA Checkpoint Service API (Chapter 7)
+
+   * SA Event Service API (Chapter 8)
+
+   * SA Message Service API (Chapter 9)
+
+   * SA Lock Service API (Chapter 10)
+
+The Availability Management Framework API (Chapter 5) provides the following
+services to SA-aware applications:
+
+   * Registration and un-registration
+
+   * Health monitoring
+
+   * Availability management
+
+   * Protection group management
+
+   * Error reporting
+
+Other requirements are described in this document are not related to cluster
+application APIs, but define requirements that are needed in a cluster. These
+include items such as shared storage support, synchronized time, and cluster
+management functions such as monitoring, control, and diagnostics. Items such as
+a clustered file system and clustered volume manager are also included in this
+document as they are essential building blocks for HA clustering, although they
+have no established APIs.
+
++----------------------------+---------------------------------+
+| **CLUSTERING REQUIREMENT SUB-CATEGORIES**                    |
++----------------------------+---------------------------------+
+| *Requirement Sub-Category* | *Sub-Category Description*      |
++----------------------------+---------------------------------+
+|  CMS                       | Membership Service              |
++----------------------------+---------------------------------+
+|  CES                       | Event Service                   |
++----------------------------+---------------------------------+
+|  CCS                       | Checkpoint Service              |
++----------------------------+---------------------------------+
+|  CCM                       | Communication and Messaging     |
++----------------------------+---------------------------------+
+|  CLS                       | Lock Service                    |
++----------------------------+---------------------------------+
+|  CAF                       | Availability Framework          |
++----------------------------+---------------------------------+
+|  CMON                      | Monitoring                      |
++----------------------------+---------------------------------+
+|  CCON                      | Control                         |
++----------------------------+---------------------------------+
+|  DIAG                      | Diagnostics                     |
++----------------------------+---------------------------------+
+|  CSM                       | Shared Storage Management       |
++----------------------------+---------------------------------+
+|  CFH                       | Fault Handling                  |
++----------------------------+---------------------------------+
+
 Cluster Requirements
 ====================
-
-.. |clu| replace:: Cluster
 
 CFH.1.0 Cluster Node Failure Detection
 --------------------------------------
@@ -973,10 +1200,466 @@ CDIAG.2.4 Synchronized/Atomic Time Across Cluster
 |  cluster-wide logs.                                                          |
 +---------------+-------------------------------------+-------------+----------+
 
+Clustering References
+=====================
+
+   * Birman, Kenneth P. 1997. Building Secure and Reliable Network Applications.
+     Manning Publishing Company and Prentice Hall.
+
+   * Birman, Ken, et al (circa 2000). “The Horus and Ensemble Projects:
+     Accomplishments and Limitations.”
+
+   * Chandra, Tushar, Vassos Hadzilacos, Sam Toueg. June 1996. “The Weakest
+     Failure Detector for Solving Consensus”.
+
+   * Davis, Roy G. 1993. VAX Cluster Principles. Digital Press.
+
+   * Dolev, Danny, and Dalia Malki. 1996. “The Transis Approach to High
+     Availability Cluster Communication.” Comm. of the ACM 39 (April): 64-70.
+
+   * Pfister, Greg. 1998. “In Search of Clusters”, Second Edition, Prentice Hall
+     PTR.
+
+   * Simmons, Chuck, and Patty Greenwald. 1994. “Oracle Lock Manager
+     Requirements,” Oracle Corporation.
+
+   * Thomas, Kristin. 2001. “Programming Locking Applications,” IBM Corporation.
+
+   * van Renesse, Robbert, Kenneth P. Birman, and Silvano Maffeis. 1996. “HORUS:
+     A flexible Group Communication System.” Comm. of the ACM 39 (April): 76-83.
+
+   * Service Availability Forum http://www.saforum.org/
+
+   * Open Cluster Framework http://www.opencf.org
+
+The following references discuss virtual synchrony:
+
+   * Birman, Kenneth.1987. "Exploiting virtual synchrony in distributed systems"
+
+   * Extended Virtual Synchrony: http://www.cs.jhu.edu/~yairamir/dcs-94.ps
+ 
+The following cluster-related whitepapers can be found at
+http://developer.osdl.org/cherry/cluster-whitepapers/.
+
+   * OSDL Cluster Architecture (OSDL-cluster.html)
+
+   * Carrier Grade Linux Clustering Model (cluster_alcatel.doc)
+
+   * Ericsson Clustering Model Proposal (cluster_ericsson.pdf)
+
+   * The Telecom System View (cluster_intel.pdf)
+
+   * Foundational Components of Service Availability (cluster_mv.pdf)
+
+   * NTT Clustering Model (cluster_ntt.pdf)
+
+Definition of Cluster Terms
+===========================
+
+[ ] indicates a term that is defined elsewhere in the definitions of terms.
+
+Application
+-----------
+
+A set of [processes], running on a computer [system], that provides a service to
+the [users] of this [system]. An application is usually referred to as the non
+operating system portion of the software in a [system].
+
+Availability
+------------
+
+Availability is the amount of time that a [system] [service] is provided in
+relation to the amount of time the [system] [service] is not provided. [System]
+[service] downtime could be the result of [system] [failures] (unscheduled
+downtime) or for things like upgrades, system relocation, or backups (scheduled
+downtime). A [system] [service] is provided if the [service] is functioning at
+an acceptable level of [performance] or [scalability].  Availability is commonly
+expressed as a percentage (see [five-nines] or [six-nines]).
+
+Percent Availability = (time service is provided / total time) X 100
+
+Cluster
+-------
+
+Two or more computer [nodes] in a [system] used as a single computing entity to
+provide a [service] or run an [application] for the purpose of [high
+availability], [scalability], and distribution of tasks.
+
+Communication
+-------------
+
+The exchange of information between [processes]. These [processes] can be
+running on the same [node] (intra-node) or on different [nodes] (inter-nodes).
+The information includes [events] and [messages].
+
+Data
+----
+
+Numerical or other information represented in a form suitable for processing by
+a [process].
+
+Data Checkpointing
+------------------
+
+The mechanism by which [application] state is transmitted from an active
+[service unit] to one or more standby [service units].
+
+Event
+-----
+
+A [communication] with or without data which notifies a set of zero or more
+[processes] that something took place. This communication can be either within a
+[node] and/or between [nodes].
+
+Event Service
+-------------
+
+A publish/subscribe event service that manages [events]. [Events] may be grouped
+into named channels and handle attributes such as priority, ordering, retention
+times, and persistence. A [subscriber] informs the event mechanism that it
+wishes to receive a certain event. A [publisher] posts an event to the event
+mechanism to be delivered to all [subscribers] of that event. This way the
+[publisher] and [subscriber] are decoupled, they do not have to directly know
+about each other, just about the event. Events may be asynchronous or
+synchronous. A [publisher] posting a synchronous event will block or be informed
+when all [subscribers] have received the event. The [publisher] of an
+asynchronous event will not block waiting for delivery or be informed when the
+event is delivered to any [process].
+
+Failback
+--------
+
+The process to migrate back to a [node] after it has been [repaired]. It can be
+controlled or automatic.
+
+Failover
+--------
+
+The ability to automatically switch a [service] or capability to a [redundant]
+[node], [system], or [network] upon the [failure] or abnormal termination of the
+currently-active [node], [system], or [network].
+
+Failure
+-------
+
+The inability of a [system] or [system] component to perform a required function
+within specified limits. A failure may be produced when a [fault] is
+encountered. Examples of failures include invalid data being provided, slow
+response time, and the inability for a [service] to take a request. Causes of
+failure can be hardware, firmware, software, network, or anything else that
+interrupts the [service].
+
+Failure Detection
+-----------------
+
+A failure is ultimately caused by an unmasked [fault] in the [system]. Failure
+detection is the process, usually from external view, to detect a [failure] of
+the [service] the [system] is providing.
+
+Fault
+-----
+
+An error in a computer [system] or the [service] it provides. A fault may be
+masked and not impact the [application] or the [service] it provides. A fault
+can also be classified as transient or permanent. A fault is often associated
+with a [system] defect in the software or hardware. A fault can be caused by
+external stimulus to the [system].
+
+Fault Confinement
+-----------------
+
+Equivalent to [fault isolation].
+
+Fault Detection
+---------------
+
+Ability to detect an abnormal condition (device failure, temperature error,
+etc.) in the [system].
+
+Fault Diagnosis
+---------------
+
+The localization of a [fault] to its repair unit.
+
+Fault Isolation
+---------------
+
+Ability to protect the rest of the [system] from the effects of a [fault].
+
+Fault Prediction
+----------------
+
+Detecting or forecasting [faults].
+
+Fault Tolerance
+---------------
+
+Ability for a [system] to mask a set of [failures] from impacting the [service]
+it provides.
+
+Five-Nines
+----------
+
+Five-nines is measured as 99.999% [service] [availability]. It is equivalent to
+5 minutes a year of total planned and unplanned downtime of the [service]
+provided by the [system].
+
+Group Multicast
+---------------
+
+The sending of a single [message] to a set of destination [processes].
+
+Hand-over
+---------
+
+Equivalent to [switch-over].
+
+Lock Service
+------------
+
+The lock [service] is a distributed lock [service], suitable for use in a
+[cluster], where [processes] in different [nodes] might compete with each other
+for access to shared resources. A lock [service] may provide the following
+capabilities: exclusive and shared access, synchronous and asynchronous calls,
+lock timeout, trylock, deadlock detection, orphan locks, and notification of
+waiters.
+
+Message
+-------
+
+A [communication] with [data] in a form suitable for transmission. A message may
+contain attributes of the [communication] such as source, destination, time
+stamps, and authorization information, etc. It may also contain [application]
+specific information.
+
+MTTF
+----
+
+Mean Time To [Failure]. The interval in time which the [system] can provide
+[service] without [failure].
+
+MTTR
+----
+
+Mean Time To [Repair]. The interval in time it takes to resume [service] after a
+[failure] has been experienced.
+
+Network
+-------
+
+A connection of [nodes] which facilitates [communication] among them. Usually,
+the connected nodes in a network use a well defined [network protocol] to
+communicate with each other.
+
+Network Protocols
+-----------------
+
+Rules for determining the format and transmission of data. Examples of network
+protocols include TCP/IP, UDP, etc.
+
+High Availability
+-----------------
+
+The state of a [system] having a very high ratio of [service] uptime compared to
+[service] downtime. Highly available systems are typically rated in terms of
+number of nines such as [five-nines] or [six-nines].
+
+Node
+----
+
+A single computer unit, in a [network], that runs with one instance of a real or
+virtual operating system.
+
+Node Membership
+---------------
+
+The mechanism by which computer [nodes] join and leave a cluster as well as the
+mechanism to detect [node] [failure]. A [node] is deemed to be a member if it
+has joined the [cluster] successfully. A [node] is deemed to be a non-member if
+it has not joined the cluster or if it has left the cluster. A detected
+[failure] may result in the [node] leaving the cluster or being isolated from
+the cluster, depending on node membership policy.
+
+Performance
+-----------
+
+The efficiency of a [system] while performing tasks. Performance characteristics
+include Performance total throughput of an operation and its impact to a
+[system]. The combination of these characteristics determines the total number
+of activities that can be accomplished over a given amount of time.
+
+Process
+-------
+
+A single instance of a software program running on a single [node].
+
+Process Group
+-------------
+
+A collection of processes registered within [cluster] software.
+
+Process Group Membership
+------------------------
+
+The mechanism by which [process] registration, un-registration, and [failure
+detection] is managed. A [process] is deemed to be a member if it has registered
+with the [process group] successfully. A [process] is deemed to be a non-member
+if it has not registered with the process group. A [detected] failure may cause
+the [process] to become a non- member, depending on the process group membership
+policy. A [process] can gracefully un-register to depart from the process group.
+The process group membership also handles authorization to join the membership.
+Process group membership depends upon [node membership] if process group
+membership is available on multiple [nodes].  Process group membership is used
+to execute application [failover] policy.
+
+Publisher
+---------
+
+A [process] that sends [events].
+
+RAS
+---
+
+[Reliability], [availability], and [serviceability]
+
+Recovery
+--------
+
+To return a failing component, [node] or [system] to a working state. A failing
+component can be a hardware or a software component of a [node] or [network].
+Recovery can also be initiated to work around a [fault] that has been detected;
+ultimately restoring the [service].
+
+Redundancy
+----------
+
+Duplication of hardware, software, or network components in a [system] to avoid
+[Single Points of Failure].
+
+Reliability
+-----------
+
+The continuation of [service] in the absence of [failure]. Reliability is
+commonly measured as the [MTTF] of a [system].
+
+Repair
+------
+
+The process to remove a [fault].
+
+Replication
+-----------
+
+A component, [node], or [system] which is configured identically to a base
+component, [node] or [system] for the purpose of [fault tolerance],
+[performance], or ease of [service].
+
+Scalability
+-----------
+
+How well a solution to some problem will work when the size of the problem
+increases?  In the CGL context, the scalability is defined as the ability of a
+[system] to provide the same level of [high availability] performance when the
+work load of the [service] increases. The solution to increase the [system] or
+[service] scalability can be software or hardware oriented.
+
+Service
+-------
+
+A set of functions provided by a computer [system]. Examples of communications
+services include media gateway, signal, or soft switch types of applications.
+Some general examples of services include web based or database transaction
+types of applications.
+
+Service Unit
+------------
+A collection of one or more software [processes] that provide [service] to a
+[user].
+
+Serviceability
+--------------
+
+The capability for a [system] to be maintained and updated. Often,
+serviceability is measured by how easy a maintenance task can be performed or
+how quickly a [system] [fault] can be tracked down and repaired so that the
+[system] can resume the [service].
+
+Single Point of Failure
+-----------------------
+
+Any component or [communication] path within a computer [system] that would
+result in an interruption of the [service] if it failed.
+
+SIX-NINES
+---------
+
+Six-nines is measured as 99.9999% [service] [availability]. It is equivalent to
+30 seconds a year of total planned and unplanned downtime of the [service]
+provided by the [system].
+
+SUBSCRIBER
+----------
+
+A [process] that receives [events]. A [subscriber] may subscribe to one or many
+[events]. A subscriber may join and leave an event subscription at any time
+without involving the publishers.
+
+SWITCH-OVER
+-----------
+
+Ability to switch to a [redundant] [node], [system], or [network] upon a normal
+termination of the currently-active [node], [system], or [network]. Switch-over
+can happen with or without human intervention.
+
+SYSTEM
+------
+
+A computer system that consists of one computer [node] or many nodes connected
+via a computer network mechanism.
+
+USER
+----
+
+An external entity that acquires [service] from a computer [system]. It can be a
+human being, an external device, or another computer [system].
+
+Serviceability Requirements Definition
+......................................
+
+This section specifies a set of useful and necessary features for servicing and
+maintaining a system. Telecommunication systems such as management servers,
+signaling servers, and gateways must have the capability to be managed and
+monitored remotely, have robust software package management for installations
+and upgrades, and have mechanisms for capturing and analyzing failure
+information. A single point of control is required for applications, software,
+hardware, and data for functions such as data movement, security, backup, and
+recovery.
+
+CGL systems will support remote management standards such as Simple Network
+Management Protocol (SNMP), Common Information Model (CIM), and Web-Based
+Enterprise Management (WBEM). Local management standards include IPMI and the
+Service Availability Forum's Hardware Platform Interface (HPI).
+
+Debuggers, application and kernel dumpers, watchdog triggers, and error analysis
+tools are needed to debug and isolate failures in a system. Diagnostic
+monitoring of temperature controls, fans, power supplies, storage media, the
+network, CPUs, and memory are needed for quick failure detection and failure
+diagnosis.
+
++-----------------------------+------------------------------+
+| **Serviceability Sub-Categories**                          |
++-----------------------------+------------------------------+
+| *Requirement Sub-Category*  |  *Sub-Category Description*  |
++-----------------------------+------------------------------+
+| SMM                         |  Management and Monitoring   |
++-----------------------------+------------------------------+
+| SPM                         |  Software Package Management |
++-----------------------------+------------------------------+
+| SFA                         |  Failure Analysis            |
++-----------------------------+------------------------------+
 
 Serviceability Requirements
 ===========================
-.. |ser| replace:: Serviceability 
 
 SMM.3.1 Serial Console Operation
 --------------------------------
@@ -1551,9 +2234,285 @@ SFA.10.0 Kernel Dump: Configurable Destinations
 |    the next system boot.                                                     |
 +---------------+-------------------------------------+-------------+----------+
 
+Performance Requirements Definition
+...................................
+
+This section is a collection of requirements for the Linux operating system that
+describe the performance and scalability requirements of typical communications
+systems. Key requirements include a system's ability to meet service deadlines;
+to scale in order to take advantage of symmetric multiprocessing (SMP),
+simultaneous multithreading (SMT) technology, and large memory systems; and to
+provide efficient, low latency communication.
+
+Without predictable execution latencies, it is possible that service deadlines
+would not be met, resulting in dropped calls, unreasonable call-response
+characteristics, or even dropping the entire service from active operation. Soft
+real-time scheduling provides predictable CPU scheduling latencies within
+defined loads. Latency and scheduling parameters are required to be configurable
+at runtime, including the scheduling quantum being configurable to 1ms or less.
+However, the services use many resources other than the CPU; therefore,
+protection against priority inversion, priority inheritance to system resources,
+and appropriate system resource scheduling are also required to maintain
+predictable scheduling.
+
+To take advantage of scalable hardware architectures, CGL specifies support for
+SMP and SMT, which includes process affinity, task exclusive binding to logical
+CPUs and interrupt affinity capabilities. Large memory systems of more than 4GB
+of physical memory are needed to handle the memory demands of scalable
+communication applications.
+
+Protocol stacks are required to be prioritized so certain protocols may take
+scheduling priority over less important network protocols. To improve latency
+and reduce CPU usage in network communications, zero-copy network protocols may
+be needed. IPv6 forwarding tables are required to be compact and use a small
+amount of memory. Support in the Linux Kernel for a 9000 byte Maximum Transfer
+Unit (MTU) is required.
+
+Performance Focus Areas
+=======================
+
+Real-Time Processing
+--------------------
+
+Scope
+#####
+
+The telecommunications application market faces new technical challenges with
+the introduction of architectures such as Next Generation Networks and IP
+multimedia services for mobile networks.
+
+Real-time behavior is a major issue for new applications and protocol classes
+based on IP services such as VoIP, SIGTRAN, and RTP, where real time behavior
+drives the quality of service for end-users. Enhancements in real-time behavior
+would allow Linux to be used for some applications that are currently run on
+other real-time operating systems.
+
+This document does not make a distinction between hard real-time and soft real-
+time support in the Linux kernel. Real-time capabilities are defined in terms
+such as maximum scheduling latency.
+
+High Resolution Timers
+######################
+
+Incorporating high-resolution timers based on a 1 ms tick, rather than the
+currently supported 10 ms tick, will enhance the real-time task scheduling
+capabilities of Linux. If hardware platform support is provided for a 1 ms tick,
+the kernel will no longer be required to program a specific timer to elapse
+after 1 ms, eliminating overhead.
+
+This feature enables:
+
+   * A 1 ms quantum to be managed for task scheduling.
+
+   * A 1 ms timer to be managed without requiring the kernel to program a
+     specific clock. Configuring the kernel with a 1 ms tick value rather than
+     the current 10 ms tick value allows rescheduling to occur every 1 ms in
+     response to a periodic clock timer interrupt.
+
+POSIX Real-Time Features
+########################
+
+POSIX real-time and advanced real-time features enable better support for real-
+time, portable applications at the API level.
+
+Protection Against Priority Inversion
+#####################################
+
+Priority inversion is an issue for real-time application programming because
+scheduling priorities defined by design may be inverted causing unexpected
+latencies. Priority inversion happens when a lower priority thread blocks a
+higher priority one. The most general case is when a lower priority thread holds
+a resource needed by the higher priority thread.
+
+Priority inversion protection can be provided in the Linux kernel by dynamically
+modifying the thread scheduling priority when lower priority threads are holding
+resources.
+
+Transitive priority inheritance is required to deal with cases where several
+mutexes are used by several threads.
+
+Scheduling policy can also be dynamically modified by the protection mechanism.
+For example, time-sharing threads can be promoted to real-time FIFO threads.
+This can have undesired consequences, however, as timesharing processes are
+generally not coded with FIFO policy in mind. A means should be provided for the
+client application to specify priority inheritance or priority protection
+capabilities for the internal mutexes that they use.
+
+APIs providing this capability should be implemented in such a way so that they
+will perform correctly if they are promoted to real-time policies.
+
+Message Queues with Priority Promotion
+######################################
+
+The priority inheritance protection mechanism can be extended by using a dynamic
+priority promotion system for message queues. In such a system, the priority of
+the receiver thread is promoted by the scheduler according to the message
+priority, enabling processing of urgent messages with high scheduling priority.
+
+Handling Interrupts as Kernel Threads
+#####################################
+
+Since interrupt service routines are not allowed to sleep, preemption locks in
+interrupt handlers normally can‟t be changed to mutexes. To change preemption
+locks that are placed in interrupt service routines, interrupt service routines
+(aside from the timer interrupt routines) could be handled by kernel threads.
+
+Mapping interrupt service routines onto real-time kernel threads enables
+interrupt handlers to be assigned priorities and soft real-time processes to be
+given higher priorities than interrupt handlers, allowing better designs. An
+additional benefit is the reduction of critical sections in interrupt handlers.
+
+Symmetric Multi-Processing
+--------------------------
+
+Reducing SMP Contention
+#######################
+
+Improving performance and scalability in an SMP system can be accomplished by
+reducing resource contention through process affinity interrupt affinity, and
+Hyper-Threading support.
+
+SMP kernel critical sections can be handled by:
+
+   * A spin-lock
+
+   * A mutex, if not used in an interrupt handler
+
+Generally, the spin-lock option is the faster in terms of CPU time, but it
+requires that preemption be disabled and introduces processor-level latency when
+the resource is already locked. The mutex option adds mutex and context
+switching costs, but latency remains at the process level.
+
+Using spin-lock with a high number of processors can lead to high latency
+depending on the critical section length.
+
+Quality of service must be taken into account for following cases:
+
+   * When timers are armed in parallel on several processors
+
+   * When concurrent file accesses occur
+
+   * When shared-memory is accessed by several processors
+
+Process Affinity
+################
+
+Process affinity provides for load balancing at the application level. When
+process affinity is used, it provides more efficient caching. For example, it
+must be possible to bind real-time processes to specified processors. Other
+processes in the systems do not need to be assigned to specified processors.
+
+Interrupt Handler Affinity
+##########################
+
+Assigning the top half of interrupt handlers to a single processor enables load
+balancing of interrupt handlers. The bottom half and top half of each interrupt
+handler should be assigned to the same CPU to reduce inter-processor contention.
+
+Hyper-Threading Support
+#######################
+
+Because the logical Hyper-Threaded processors share a cache, the scheduler only
+needs to keep threads attached to one of the adjacent logical processors.  The
+scheduler can move threads between adjacent logical processors with no
+performance degradation because the cache is stable between the two logical
+processors.
+
+Memory Usage
+------------
+
+As CPU capabilities increase, memory demands also increase as more communication
+contexts can be handled per system. Memory related requirements are oriented
+toward high physical memory (HIGHMEM) and virtual memory.
+
+Support of More Than 4G Physical Memory
+#######################################
+
+Support for more than 4G of physical memory is a requirement for 32-bit and 64-
+bit processor architectures.
+
+COMMUNICATION SERVICE
+---------------------
+
+Communication services have a major impact on performance of telecommunications
+applications. Performance of Linux stacks should be evaluated as follows:
+
+   * Message delivery latency and throughput
+
+   * Resource usage including CPU and memory usage
+
+   * Load balancing capability on an SMP system
+
+IPV4, IPV6, MIPV6 Forwarding Tables Fast Access and Compact Memory
+##################################################################
+
+The speed at which packets can be routed is limited by the time it takes to
+perform the forwarding table lookup for each packet.
+
+When a basic lookup method is used, such as the BSD binary trie, the number of
+nodes equal to the length of the address in bits is potentially traversed in the
+forwarding table, generating an equivalent number of memory accesses. The
+current Linux implementation is not highly scalable.
+
+Methods faster than those currently available should be implemented to support
+2000 routes updated per second and up to 500,000 routes with low lookup latency.
+The tradeoff between memory and access latency should also be addressed.
+
+See “Survey and taxonomy of IP address lookup algorithms “ at
+http://mia.ece.uic.edu/~papers/Surveys/pdf00000.pdf .
+
+CLUSTER COMMUNICATION SERVICE
+#############################
+
+A cluster benefits from a cluster specific communication service that addresses
+specific issues such as latency, ordering, and recovery. A cluster communication
+service can achieve better performance than a general communication service when
+used in a cluster, because it has knowledge of the local topology, including the
+cluster membership.
+
+DIFFSERV Support
+################
+
+Support should be provided for Differentiated Services (RFCs 2474 and 2475) for
+IPv4 to enable quality of service and traffic control.
+
+Prioritized Protocol Processing
+###############################
+
+A prioritized protocol processing mechanism enables a high-priority process to
+quickly obtain data from the network even if massive packets arrive for multiple
+processes. It is based on a protocol priority assignment mechanism that allows a
+higher scheduling priority to be given to the protocol with higher priority.
+
+I/O and File Systems
+--------------------
+
+Network Storage Replication
+###########################
+
+A network storage replication service uses local network and device resources.
+Performance depends on the local network and storage devices used.
+
+A network storage replication service provides a lower performance level
+compared to local storage access. The relative difference must be less than 30%
+in terms of user throughput in normal conditions when mirrored devices are
+synchronized.
+
+Upon device resynchronization, the user throughput should not be reduced more
+than 25% compared to normal conditions.
+
+Availability and Initialization
+-------------------------------
+
+Application Pre-Loading
+#######################
+
+The CGL 2.0 requirement for application pre-loading should be extended to
+enhance dynamic loading performance. Often, several seconds are spent in the
+dynamic ELF loader for symbol relocation.
+
 Performance Requirements
 ========================
-.. |per| replace:: Performance 
 
 PRF.1.4 High-Resolution Timers
 ------------------------------
@@ -1722,10 +2681,98 @@ PRF.14.0 RAID 0 Support
 |  transfer-rate-intensive environment.                                        |
 +---------------+-------------------------------------+-------------+----------+
 
+Performance References
+======================
+
+   * Linux Scheduler latency, Clark Williams, Red Hat, Inc. March 2002
+     http://www.linuxdevices.com/files/article027/rh-rtpaper.pdf
+
+   * The Linux scalability Project
+     http://www.citi.umich.edu/techreports/reports/citi-tr-99-4.pdf
+
+   * Scalable statistic counter project
+     http://lse.sourceforge.net/counters/statctr.html
+
+   * Linux 2.5 Timer scalability study from Andy Pfiffer
+     http://developer.osdl.org/andyp/timers/
+
+   * LK SCTP / TCP performance comparison
+     http://datatag.web.cern.ch/datatag/WP3/sctp/tests.htm
+
+   * kernel 2.6 includes some scalability enhancements that are referenced in
+     http://www.kernelnewbies.org/status/Status-08-Aug-2003.html
+
+   * lmbench: Portable Tools for performance analysis:
+     http://www.usenix.org/publications/library/proceedings/sd96/full_papers/mcvoy.pdf
+
+   * Time-critical tasks in Linux 2.6. Concept to increase the preemptability of
+     the Linux kernel.
+     http://inf3-www.informatik.unibw-muenchen.de/research/linux/hannover/automation_conf04.pdf
+
+   * CELF-RT working group
+     http://tree.celinuxforum.org/pubwiki/moin.cgi/RealTimeWorkingGroup
+
+   * Integration New Capabilities into NetPIPE:
+     http://www.scl.ameslab.gov/netpipe/np_euro.pdf
+
+Standards Requirements Definition
+.................................
+
+One goal of the CGL effort to achieve high reliability, availability, and
+serviceability (RAS), and application portability is to leverage mature and
+well- established industry standards that are common and relevant to the
+carrier-grade environment and include them as part of the CGL requirements.
+
+Open standards are important because they are freely available for anyone or any
+organization to use and because open standards can evolve with wide community
+feedback and validation. The CGL WG is actively working with recognized standard
+bodies, such as the Linux Standard Base (LSB – a workgroup of the Linux
+Foundation) and the Service Availability Forum (SA Forum). These organizations
+are producing standards and specifications that address the RAS and application
+portability gaps between Linux as it exists today and where it needs to be to
+support highly available communications applications.
+
+The first requirement in this section shows the CGL working group's desire to
+work alongside recognized standards bodies::
+
+   CGL specifies the need for compliance to the Linux Standard Base (LSB)
+   version 3.0 to ensure a CGL 5.0 distribution will have the support for the
+   same level of the application binary compatibility as is required by the LSB
+   standard.
+
+CGL 5.0 requires implementation of the latest interface specifications from the
+SA Forum to provide a common set of standards and building blocks for high
+availability architectures and platform management. The SA Forum provides
+standards specifications that define interfaces for cluster-aware applications
+(Application Interface Specification - AIS version B.01.01) and for platform
+management applications (Hardware Platform Interface - HPI version B.01.01).
+See the SA Forum site (www.saforum.org) for the B.01.01 versions of the AIS and
+HPI specifications.
+
+Continuing from previous versions of the CGL specifications, the CGL Standards
+Definition adds more POSIX compliance requirements based on IEEE Std
+1003.1-2001. These additional areas of POSIX compliance are intended to bridge
+the application portability gaps as mainstream communications applications are
+ported to Linux application environments.
+
+A variety of other standards requirements are included in the CGL Standards
+Definition to address the networking, communications, and platform needs of
+carrier environments. Standards requirements such as Stream Control Transfer
+Protocol (SCTP), Internet Protocols (Ipv4/IPv6), Mobile Internet Protocol
+(MIPv6), Simple Network Management Protocol (SNMP), Intelligent Platform
+Management Interface (IPMI), IEEE 801.Q (virtual LAN), Diameter, Common
+Information Model (CIM), Web-Based Enterprise Management (WBEM), Advanced
+Configuration and Power Interface (ACPI), and PCI Express, are included.
+
+More open industry standards will become mature and recognized over time. The
+CGL working group will evaluate them for consideration in future versions of the
+CG requirements. The CGL working group believes that the adoption of open
+standards in mainline Linux offerings will benefit application developers and
+solution providers and will carry Linux to the next level of popularity in the
+communications industry as well as the general Linux user community.
 
 Standards Requirements
 ======================
-.. |std| replace:: Standards 
 
 STD.1.0 Linux Standard Base Compliance
 --------------------------------------
@@ -1734,7 +2781,7 @@ STD.1.0 Linux Standard Base Compliance
 +===============+=====================================+=============+==========+
 | STD.1.0       | Linux Standard Base Compliance      |    |std|    |    P1    |
 +---------------+-------------------------------------+-------------+----------+
-|  http://www.linuxbase.org Description: CGL specifies that carrier grade      |
+|  http://www.linuxbase.org CGL specifies that carrier grade                   |
 |  Linux shall be compliant with the Linux Standard Base (LSB) 3.0 The LSB     |
 |  3.0 specification has been split into a generic LSB core, a generic         |
 |  module for C++, and a set of architecture specific modules. Required LSB    |
@@ -2598,9 +3645,245 @@ STD.26.2 Layer 2 Tunneling Protocol Support Version 3
 | |PoC|: Mainline kernel.                                                      |
 +-----------+---------------------------------------+-------------+------------+
 
+
+Security Requirements Definition
+................................
+
+The telecommunications environment is different from a general-purpose computing
+environment. The most salient differences to consider in developing a CGL threat
+model are:
+
+   * CGL systems do not have many user accounts.
+
+   * User accounts do not reflect individual users.
+
+   * CGL systems are configured through custom user interfaces.
+
+   * CGL systems are typically configured without shell access.
+
+   * Administrators are trusted and competent.
+
+The major threat to the telecommunications environment is, therefore,
+unauthorized access to management and control interfaces by outsiders. These
+outsiders can gain access by subverting the operating system or one of the
+applications it is running.
+
+A severe potential security threat arises when applications need to touch
+multiple security planes. Many telecommunication services can be provisioned
+remotely by the end-user.
+
+Many ISPs that offer domain hosting allow customers to create new mailboxes or
+route incoming calls to 5-digit work extensions to any telephone number in the
+world with just a few clicks on a web page. Facilities like these create a new
+set of risks:
+
+   * Unauthorized rerouting of email and telephone calls by disgruntled
+     associates or unscrupulous competitors.
+
+   * Exploitation of vulnerabilities in software to “jump” from one security
+     plane to another, which can lead to many types of risks.
+
+Mitigating these risks will require some forethought such that users of these
+systems are properly authenticated and authorized and that information traveling
+between planes passes through narrowly defined interfaces that protect against
+unauthorized access.
+
+Security Design
+===============
+
+The security objectives and requirements in this document are aimed at analyzing
+and mitigating threats and improving resiliency to attacks on CGL systems. The
+requirements in this section attempt to implement security objectives for CGL
+systems and are based on an intersection of assumptions about CGL systems:
+
+   * Intended use
+
+   * Environment
+
+   * Security policies
+
+   * Exposure to expected threats and vulnerabilities
+
+The security requirements are firmly rooted in sound security practices. These
+practices and terminology borrow heavily from [CSPP-OS03], an example Common
+Criteria profile for common off the shelf (COTS) operating systems.
+
+Given the environment described in the previous section, the significant threat
+to carrier grade systems is unauthorized access to management and control
+interfaces by intruders.
+
+The CGL Security Requirements have been based upon the Common Criteria
+Protection Profiles:
+
+   * Identify the assumptions about CGL systems based upon their use and their
+     environment.
+
+   * Draft a set of security policies to which CGL systems shall adhere.
+
+   * Identify common threats to which CGL systems are exposed.
+
+   * Derive the set of functional objectives that CGL systems shall implement.
+
+   * Derive a coherent set of requirements that address the functional
+     objectives.
+
+Design Objectives
+-----------------
+
+This section identifies the security objectives met by the requirements in this
+specification. A more complete list from which these security objectives were
+taken is found in section 10.7. A Target of Evaluation (TOE) is the system and
+environment to which these objectives are applied.
+
+The following table specifies the security objectives met by requirements listed
+in section of this document.
+
++------------------------+-----------------------------------------------+
+| *Security Objective*   | *Description*                                 |
++------------------------+-----------------------------------------------+
+| O.DETECT-SOPHISTICATED | The environment must provide the ability to   |
+|                        | detect sophisticated attacks and the results  |
+|                        | of such attacks (e.g. corrupted system        |
+|                        | state).                                       |
++------------------------+-----------------------------------------------+
+| O.ENTRY-NON-TECHNICAL  | The environment must provide sufficient       |
+|                        | protection against non-technical attacks by   |
+|                        | other than authenticated users.               |
++------------------------+-----------------------------------------------+
+| O.PHYSICAL             | Those responsible for the system must ensure  |
+|                        | that those parts of the system critical to    |
+|                        | security policy are protected from physical   |
+|                        | attack that might compromise security.        |
++------------------------+-----------------------------------------------+
+| O.ACCESS-TOE           | The system must provide public access and     |
+|                        | access by authenticated users to those        |
+|                        | resources and actions for which they have     |
+|                        | been authorized.                              |
++------------------------+-----------------------------------------------+
+| O.ACCOUNT-TOE          | The system must ensure, for actions under its |
+|                        | control or knowledge, that all users can      |
+|                        | subsequently be held accountable for their    |
+|                        | security relevant actions. It is anticipated  |
+|                        | that individual accountability might not be   |
+|                        | achieved for some actions.                    |
++------------------------+-----------------------------------------------+
+| O.AUTHORIZE-TOE        | The system must provide the ability to        |
+|                        | specify and manage user and system process    |
+|                        | access rights to individual processing        |
+|                        | resources and data elements under its         |
+|                        | control, supporting the organization‟s        |
+|                        | security policy for access control.           |
++------------------------+-----------------------------------------------+
+| O.BYPASS-TOE           | The system must prevent errant or             |
+|                        | non-malicious, authorized software or users   |
+|                        | from bypassing or circumventing security      |
+|                        | policy enforcement. NOTE: This objective is   |
+|                        | limited to "non-malicious" because CSPP-OS    |
+|                        | controls are not expected to provide          |
+|                        | sufficient mitigation for the greater         |
+|                        | negative impact that "malicious" implies.     |
++------------------------+-----------------------------------------------+
+| O.DETECT-TOE           | The system must enable the detection of a     |
+|                        | specified set of vulnerabilities.             |
++------------------------+-----------------------------------------------+
+| O.ENTRY-TOE            | The system must prevent logical entry to      |
+|                        | itself using unsophisticated technical        |
+|                        | methods by persons without authority for such |
+|                        | access.                                       |
++------------------------+-----------------------------------------------+
+| O.KNOWN-TOE            | The system must ensure that, for all actions  |
+|                        | under its control and except for a            |
+|                        | well-defined set of allowed actions, all      |
+|                        | users are identified and authenticated before |
+|                        | being granted access.                         |
++------------------------+-----------------------------------------------+
+| O.OBSERVE-TOE          | The system must ensure that its security      |
+|                        | status is not misrepresented to the           |
+|                        | administrator or user. This is a combination  |
+|                        | of prevention and detection.                  |
++------------------------+-----------------------------------------------+
+| O.RESOURCES            | The system must protect itself from user or   |
+|                        | system errors that result in shared resource  |
+|                        | exhaustion.                                   |
++------------------------+-----------------------------------------------+
+| O.APPLICATION-TOOLS    | The system must provide a reasonable,         |
+|                        | up-to-date set of security tools and          |
+|                        | libraries for use by applications.            |
++------------------------+-----------------------------------------------+
+| O.ACCESS-MALICIOUS     | System and environmental controls are         |
+|                        | required to sufficiently mitigate the threat  |
+|                        | of malicious actions by authenticated users.  |
++------------------------+-----------------------------------------------+
+| O.DETECT-SYSTEM        | The system, in conjunction with other         |
+|                        | entities in the environment, must enable the  |
+|                        | detection of system insecurities.             |
++------------------------+-----------------------------------------------+
+| O.NETWORK              | The system must be able to meet its security  |
+|                        | objectives in a distributed environment.      |
++------------------------+-----------------------------------------------+
+| O.ENTRY-SOPHISTICATED  | The system and environment must sufficiently  |
+|                        | mitigate the threat of an individual (other   |
+|                        | than an authenticated user) gaining           |
+|                        | unauthorized access via sophisticated,        |
+|                        | technical attack.                             |
++------------------------+-----------------------------------------------+
+| O.CONTAINMENT          | The system and environment must provide the   |
+|                        | ability to contain the effect of a security   |
+|                        | failure of an application to that             |
+|                        | application.                                  |
++------------------------+-----------------------------------------------+
+
+The following table specifies the security objectives not met by requirements in
+section of this document.
+
++------------------------+------------------------------------------------+
+| *Security Objective*   | *Rationale for not including in specification* |
++------------------------+------------------------------------------------+
+| O.ACCESS-NON-TECHNICAL | The environment must provide sufficient        |
+|                        | protection against non-technical attacks by    |
+|                        | authenticated users for non-malicious          |
+|                        | purposes.                                      |
++------------------------+------------------------------------------------+
+| O.AVAILABLE-TOE        | The system must protect itself from            |
+|                        | unsophisticated denial-of-service attacks.     |
++------------------------+------------------------------------------------+
+| O.INFO-FLOW            | The environment must ensure that any           |
+|                        | information flow control policies are          |
+|                        | enforced between system components and at the  |
+|                        | system external interfaces.                    |
++------------------------+------------------------------------------------+
+| O.RECOVER-TOE,         | Fail-secure is not something that CGL can      |
+| O.RECOVER-SYSTEM       | provide.                                       |
++------------------------+------------------------------------------------+
+| O.COMPLY               | There are many regulations that might apply    |
+|                        | to CGL. It is not the responsibility of this   |
+|                        | specification to enumerate requirements to     |
+|                        | conform to this myriad of regulations.         |
++------------------------+------------------------------------------------+
+| O.DUE-CARE             | It is the responsibility of the                |
+|                        | administrative personnel to properly secure    |
+|                        | and maintain a system.                         |
++------------------------+------------------------------------------------+
+| O.MANAGE               | It is the responsibility of administrative     |
+|                        | personnel to properly secure and maintain a    |
+|                        | system. This includes periodic audits of       |
+|                        | system configuration (not log analysis).       |
+|                        | However, no such software is being required    |
+|                        | by CGL.                                        |
++------------------------+------------------------------------------------+
+| O.OPERATE              | Mostly this is the responsibility of           |
+|                        | administrative personnel.  Secure default      |
+|                        | configuration settings will not be listed in   |
+|                        | this specification.                            |
++------------------------+------------------------------------------------+
+| O.DENIAL-SOPHISTICATED | CGL is not directly able to mitigate most      |
+|                        | denial of service attacks, as mitigating them  |
+|                        | would require redesign of protocols and        |
+|                        | interfaces.                                    |
++------------------------+------------------------------------------------+
+
 Security Requirements
 =====================
-.. |sec| replace:: Security
 
 SEC.1.1 Dynamic Kernel Security Module Mechanism
 ------------------------------------------------
@@ -3026,9 +4309,1137 @@ SEC.11.2 File Access Tracing: Limiting
 | |PoC|: AIDE, Samhain, GRSecurity                                             |
 +-------------+-----------------------------------+-------------+--------------+
 
+SECURITY DESIGN PRINCIPLES
+==========================
+
++---------------------------------+----------------------------------------+
+|  *Principle*                    | *Description*                          |
++---------------------------------+----------------------------------------+
+|  Relevance                      | The requirement must be relevant and   |
+|                                 | implement the function CGL objectives. |
++---------------------------------+----------------------------------------+
+|  Correctness of Implementation  | The requirement must faithfully        |
+|                                 | implement the security model upon      |
+|                                 | which it is based.                     |
++---------------------------------+----------------------------------------+
+|  Simplicity                     | The requirements should be simple to   |
+|                                 | implement.  Complexity is the enemy of |
+|                                 | security. Common uses should be easy   |
+|                                 | to handle and defaults should be       |
+|                                 | sensible.                              |
++---------------------------------+----------------------------------------+
+|  Robustness                     | The implementations of the             |
+|                                 | requirements should be difficult to    |
+|                                 | configure incorrectly, fail in secure  |
+|                                 | ways, and produce useful error         |
+|                                 | messages.                              |
++---------------------------------+----------------------------------------+
+|  Orthogonality                  | Requirements should be useful          |
+|                                 | individually without significant       |
+|                                 | overlap in functionality.              |
++---------------------------------+----------------------------------------+
+|  Interface Stability            | Changes and additions to the Linux     |
+|                                 | APIs should be done with backward      |
+|                                 | compatibility in mind for both source  |
+|                                 | code and binary code.                  |
++---------------------------------+----------------------------------------+
+|  Provision of Defense-in-Depth  | Multiple security mechanisms should    |
+|                                 | exist to provide additional security   |
+|                                 | protection.                            |
++---------------------------------+----------------------------------------+
+|  Designed for Testing           | A test suite should be provided for    |
+|                                 | unit testing of the requirement        |
+|                                 | implementations.                       |
++---------------------------------+----------------------------------------+
+
+ITU-T Recommendation X.805 et. al.
+==================================
+
+The International Telecommunications Union (ITU) has published many standards
+that are relevant to the security of telecommunications systems. The
+specification defers to the ITU standards for telecommunications-specific
+security requirements. The CGL Security Requirements Definition is limited to
+issues relating to security of the underlying operating system.
+
+The X.805 Security Framework
+----------------------------
+
+X.805 defines security in terms of two major concepts which are layers and
+planes.
+
+The three layers are:
+   #. Infrastructure - security of routers, switches, servers, communication
+         links, etc.
+
+   #. Services - security of services offered to the customer, such as leased
+         lines, e-mail, SMS.
+
+   #. Application - security of customer applications using services.
+
+The three planes are:
+   #. Management - security of OAM&P
+
+   #. Control - security of signaling, i.e. Session creation and modification
+
+   #. End-user - security of end-user data flows
+
+Layers and planes intersect, forming a 3 by 3 matrix. Orthogonal to this, X.805
+defines eight security dimensions:
+
+   * Privacy and data confidentiality
+
+   * Authentication
+
+   * Integrity
+
+   * Non-repudiation
+
+   * Access Control
+
+   * Communication
+
+   * Availability
+
+These dimensions touch each of the cells of the layers/planes matrix.  For
+brevity's sake, we refer to the definitions in [ITU03].
+
+Many of the issues addressed by X.805 are not relevant to our analysis, because
+they are outside the scope of an operating system.
+
+Risks, Threats, and Vulnerabilities
+-----------------------------------
+
+All discussion of security revolves around risk. Risks are created when a
+security vulnerability is combined with the threat of that vulnerability being
+exploited. In the common buffer overflow attack scenario vulnerability (the lack
+of input validation in the software) and a threat (the attacker using software
+that exploit the vulnerability), creates the risk of a successful attack. The
+risk can be mitigated in different ways. The vulnerability is removed by fixing
+the software.  The vulnerability is also removed by preventing the attack.
+
+Risks do not necessarily have to be mitigated in software, but that the
+environment in which a system is embedded can also mitigate them. This is an
+important point because it is nearly impossible to construct systems that are
+invulnerable to attack.
+
+All Software Contains Vulnerabilities
+-------------------------------------
+
+All software contains vulnerabilities and it is impractical to find and remove
+all of them in a system. Some methods for lowering the risks relating to
+vulnerabilities are:
+
+   * **Not exposing the system running the software to insecure networks.**
+     This is practical for certain limited purposes, for instance controlling a
+     power plant. In the CGL environment one could segregate network traffic
+     from different security planes, which would eliminate the threat of
+     intruders attacking software operating in the management and control plane.
+
+   * **Overflow detection through the use of programming languages and
+     development tools.** One example is the gcc compiler using the stack
+     protection (previously known as ProPolice) extension. Most stack buffer
+     overflows will result in the premature termination of a program. This
+     termination transforms the risk of a successful buffer overflow attack into
+     a denial of service attack.
+
+   * **Limiting software privileges.** A common approach is the use of 'chroot'
+     jails, a method of restricting a program's access to a very limited part of
+     the file system. Another approach is the use of a security manager that
+     decides whether an application is allowed to perform certain operations. A
+     common example is the Java sandbox which prevents access of applets to most
+     system resources.
+
+   * **Restricting network access using a DMZ.** The application and the system
+     running it may still be compromised, but the problem is somewhat contained.
+
+The solution of many security problems will be a combination of the correct
+application of OS facilities, and a correct design of the environment in which
+the systems operate.
+
+Applications Accessing Multiple Planes
+--------------------------------------
+
+A particular issue exists where applications need to access multiple security
+planes. Many CGL services can be provisioned remotely by the end-user. Many ISPs
+that offer domain hosting allow the creation of new mailboxes by the customer.
+These facilities create new risks:
+
+   * Unauthorized rerouting of e-mail and telephone calls by disgruntled
+     employees or unscrupulous competitors.
+
+   * Exploitation of vulnerabilities in software to 'jump' from one security
+     plane to another.
+
+Mitigating these risks requires forethought.
+
+   * The users of these systems need to be properly authenticated and
+     authorized.
+
+   * Information traveling between planes should pass through narrowly defined
+     interfaces that protect against unauthorized access to the control and
+     management planes from the end-user plane. A security failure in an exposed
+     part of the system should not result in failure of the system as a whole.
+
+Facilities that limit information flow between planes are not commonly
+available.  Possible approaches could be:
+
+   * Running software on multiple hosts, with very limited connectivity between
+     them.
+
+   * Running multiple processes on the same host, using operating system
+     facilities to contain each process in its own security domain.
+
+Privilege Minimization and Fine-Grained Access Controls
+-------------------------------------------------------
+
+Unix-like systems such as Linux share a few common security facilities:
+
+   * Discretionary access control using user IDs, group IDs, and file system
+     privileges.
+
+   * Restriction of processes to a portion of the filesystem.  Some Unix-like
+     systems provide additional facilities which can be useful under certain
+     circumstances, such as:
+
+   * Access Control Lists: Some access control policies are difficult to
+     implement with the classical Unix access control mechanism. ACLs provide a
+     more powerful mechanism to describe access rules. The lack of users on
+     typical carrier grade equipment makes ACLs not overly useful.
+
+   * Role Based Access Control: Users of the system can be assigned 'roles'
+     which grant privileges to resources. The role 'help desk' for example could
+     include privileges to change passwords for non-administrative users.  RBAC
+     is most useful if there are many instances of the role. This is not
+     commonly the case for CGL systems.
+
+To mitigate risks precipitated by software design or implementation errors, CGL
+requires a much more fine-grained control over system privileges. The common way
+to handle programs that need certain privileges is to give them full privileges
+at start-up time and let the program drop all the privileges they don't need.
+This causes a few problems. The privileges that need to be dropped are not
+necessarily the same on all systems, and there becomes a proliferation of
+privilege-manipulation code on the system. Tools that allow the designer or
+administrator to start software with the minimal set of privileges is required.
+
+Another issue is that Linux systems do not have a sufficiently fine-grained
+privilege model. For example, it is impossible to restrict the use of a specific
+IP address and/or port range to a limited number of processes. Ideally, it
+should be possible to allow a specific process to bind to port 80 (WWW) on a
+single interface. Multi-level security (MLS) implementations can be used to
+prohibit processes from accessing network interfaces they do not need to access.
+
+Security Environment
+====================
+
+The following sections borrow heavily from [CSPP-OS03], an example Common
+Criteria profile for COTS operating systems.
+
+Targets of Evaluation
+---------------------
+
++------------------------+----------------------------------+--------------------------------+
+| *Name*                 | *Assumption*                     | *Rationale*                    |
++------------------------+----------------------------------+--------------------------------+
+| A.COTS                 | The TOE is constructed from      | This follows from the charter  |
+|                        | near-term achievable off the     | of CGL.                        |
+|                        | shelf Linux technology.          |                                |
++------------------------+----------------------------------+--------------------------------+
+| A.MALICIOUS-INSIDER    | The TOE is not expected to be    | In CGL environments the        |
+|                        | able to sufficiently mitigate    | primary threats are network-   |
+|                        | the risks resulting from the     | based attacks, so the focus is |
+|                        | malicious abuse of authorized    | on this type of threat.        |
+|                        | privileges.                      |                                |
++------------------------+----------------------------------+--------------------------------+
+| A.SOPHISTICATED-ATTAC K| The TOE is expected to be able   | Internet-based CGL             |
+|                        | to mitigate risks resulting from | applications are subject to    |
+|                        | the application of moderately    | network-based attacks, and     |
+|                        | sophisticated attack methods.    | should be more resistant to    |
+|                        |                                  | attacks than general-purpose   |
+|                        |                                  | systems.                       |
++------------------------+----------------------------------+--------------------------------+
+| A.APPLICATION-HOSTILE  | The network containing the TOE   | Communications                 |
+|                        | is used to provide a limited set | architectures are moving       |
+|                        | of applications to an untrusted  | away from general-purpose      |
+|                        | network, not to provide shell    | computing to application       |
+|                        | access to users at different     | servers in hostile             |
+|                        | trust levels.                    | environments.                  |
++------------------------+----------------------------------+--------------------------------+
+
+Environment
+-----------
+
++-----------------------+--------------------------+-----------------------------------+
+| *Name*                | *Assumption*             | *Rationale*                       |
++-----------------------+--------------------------+-----------------------------------+
+| A.ADMIN               | The security features of | It is essential for security      |
+|                       | the TOE are competently  | that administration is both       |
+|                       | administered on a        | competent and continuous.         |
+|                       | continuous basis.        |                                   |
++-----------------------+--------------------------+-----------------------------------+
+| A.ADMIN-ONLY          | Authenticated access to  | CGL is not targeting              |
+|                       | the TOE is only provided | general purpose                   |
+|                       | to those charged with    | computing.                        |
+|                       | maintaining the TOE and  |                                   |
+|                       | the applications it      |                                   |
+|                       | provides.                |                                   |
++-----------------------+--------------------------+-----------------------------------+
+| A.USER-NEED           | Authenticated users,     | Application administrators        |
+|                       | such as administrators,  | value security of                 |
+|                       | recognize the need for a | applications which they           |
+|                       | secure CGL environment.  | maintain.                         |
++-----------------------+--------------------------+-----------------------------------+
+| A.USER-TRUST          | Authenticated users,     | Access is restricted to           |
+|                       | such as administrators,  | administrators maintaining        |
+|                       | are generally trusted to | applications.                     |
+|                       | perform discretionary    |                                   |
+|                       | actions in accordance    |                                   |
+|                       | with security policies.  |                                   |
++-----------------------+--------------------------+-----------------------------------+
+| A.NET-SEGREGATION     | Network connections in   | The end user should not be        |
+|                       | the management, control  | able to gain access to            |
+|                       | and end-user planes are  | either the control or             |
+|                       | adequately segregated.   | management plane.                 |
+|                       | One approach is to use   |                                   |
+|                       | physically separate      |                                   |
+|                       | networks. Another        |                                   |
+|                       | approach is the use of   |                                   |
+|                       | cryptographic methods    |                                   |
+|                       | for authentication,      |                                   |
+|                       | integrity verification   |                                   |
+|                       | and data                 |                                   |
+|                       | confidentiality.         |                                   |
++-----------------------+--------------------------+-----------------------------------+
+| A.CLUSTER-SEGREGATION | If the TOE is part of a  | Results are likely to be          |
+|                       | cluster the              | disruptive if cluster traffic is  |
+|                       | intra-cluster            | tampered with or captured.        |
+|                       | communications should be | For this reason, separate         |
+|                       | adequately segregated    | interconnect is preferable.       |
+|                       | from any other traffic,  |                                   |
+|                       | either by physical       |                                   |
+|                       | separation or by the use |                                   |
+|                       | of cryptographic methods |                                   |
+|                       | for authentication,      |                                   |
+|                       | integrity verification   |                                   |
+|                       | and data                 |                                   |
+|                       | confidentiality.         |                                   |
++-----------------------+--------------------------+-----------------------------------+
+| A.PROCESS-UNTRUSTED   | Processes running on the | It is often impossible to run     |
+|                       | TOE cannot always be     | legacy code in restricted         |
+|                       | trusted to perform their | environments such as              |
+|                       | duties as designed, and  | chroot jails. The TOE             |
+|                       | may attempt to access    | should support a safe way         |
+|                       | resources it is not      | to run this type of code in       |
+|                       | meant to access.         | such a way that program           |
+|                       |                          | bugs or vulnerability             |
+|                       |                          | exploits only have limited        |
+|                       |                          | consequences.                     |
++-----------------------+--------------------------+-----------------------------------+
+
+Organizational Security Policies
+--------------------------------
+
++----------------------------+--------------------------+-------------------------------+
+| *Name*                     | *Policy*                 | *Rationale*                   |
++----------------------------+--------------------------+-------------------------------+
+|                            |                          | Linux supports policies       |
+|                            | Access rights to         | that grant or deny access     |
+|                            | specific data objects    | to objects using rules        |
+|                            | are determined by object | driven by attributes of the   |
+|                            | attributes assigned to   | user (such as user            |
+| P.ACCESS                   | that object, user        | identity), attributes of      |
+|                            | identity, user           | the object (such as           |
+|                            | attributes, and          | permission bits), type of     |
+|                            | environmental conditions | access (such as read or       |
+|                            | as defined by the        | write), and environmental     |
+|                            | security policy.         | conditions (such as           |
+|                            |                          | time-of-day).                 |
++----------------------------+--------------------------+-------------------------------+
+|                            |                          | Organizational policies       |
+|                            |                          | should require that users     |
+|                            | Users must be held       | are held accountable for      |
+| P.ACCOUNT                  | accountable for          | their actions.  This          |
+|                            | security-relevant        | facilities after-the-fact     |
+|                            | actions.                 | investigations and            |
+|                            |                          | providing some deterrence     |
+|                            |                          | to improper actions.          |
++----------------------------+--------------------------+-------------------------------+
+|                            | The implementation and   |                               |
+|                            | use of the               |                               |
+|                            | organization's CGL       | The organization will meet    |
+|                            | systems must comply with | all requirements imposed      |
+| P.COMPLY                   | all applicable laws,     | upon it from outside          |
+|                            | regulations, and         | governmental or contractual   |
+|                            | contractual agreements   | obligations.                  |
+|                            | imposed on the           |                               |
+|                            | organization.            |                               |
++----------------------------+--------------------------+-------------------------------+
+|                            | The organization’s CGL   | It is important that the      |
+|                            | systems must be          | level of security afforded    |
+|                            | implemented and operated | by the CGL system be in       |
+| P.DUE-CARE                 | in a manner that         | accordance with best          |
+|                            | represents due care and  | practices within the          |
+|                            | diligence with respect   | business or government        |
+|                            | to the risks to the      | sector in which the           |
+|                            | organization.            | organization is placed.       |
++----------------------------+--------------------------+-------------------------------+
+|                            |                          | This document includes        |
+|                            |                          | information flow control as   |
+|                            | Information flow between | this is needed in many        |
+|                            | application components   | environments. While this      |
+| P.INFO-FLOW                | must be in accordance    | might not be implemented by   |
+|                            | with established         | mechanisms within the Linux   |
+|                            | information flow         | TOE, the CGL system, of       |
+|                            | policies.                | which the TOE is a part,      |
+|                            |                          | will likely have to meet      |
+|                            |                          | this policy.                  |
++----------------------------+--------------------------+-------------------------------+
+|                            |                          | Beyond a well-defined set     |
+|                            | Except for well-defined  | of actions such as read       |
+|                            | set of allowed           | access to a public            |
+| P.KNOWN                    | operations, users of the | web-server, there is a        |
+|                            | TOE must be identified   | finite community of known,    |
+|                            | and authenticated before | authenticated users who are   |
+|                            | TOE access is granted.   | authenticated before being    |
+|                            |                          | allowed access.               |
++----------------------------+--------------------------+-------------------------------+
+|                            | The organization's IT    | CGL system will likely        |
+|                            | security policy must be  | connect through untrested     |
+|                            | maintained in the        | networks and these            |
+| P.NETWORK                  | environment of           | connections should not        |
+|                            | distributed systems      | compromise security of a      |
+|                            | interconnected via       | CGL system.                   |
+|                            | insecure networking.     |                               |
++----------------------------+--------------------------+-------------------------------+
+|                            | The processing resources |                               |
+|                            | of the TOE that must be  |                               |
+|                            | physically protected in  | A TOE will not be able to     |
+|                            | order to ensure that     | meet its security             |
+| P.PHYSICAL                 | security objectives are  | requirements unless at        |
+|                            | met will be located      | least a minimum degree of     |
+|                            | within controlled access | physical security is          |
+|                            | facilities that mitigate | provided.                     |
+|                            | unauthorized, physical   |                               |
+|                            | access.                  |                               |
++----------------------------+--------------------------+-------------------------------+
+|                            |                          | Linux systems will provide    |
+|                            |                          | a measure of their            |
+|                            | The IT system, in        | resilience through            |
+|                            | conjunction with its     | functionality and             |
+|                            | environment, must        | assurances that resist,       |
+|                            | resist, be resilient to, | detect, and recover from      |
+| P.SURVIVE                  | and detect a security    | security breaches.            |
+|                            | breach and recover from  |                               |
+|                            | the breach when          |                               |
+|                            | possible.                |                               |
+|                            |                          | For sophisticated attacks,    |
+|                            |                          | a large portion of this       |
+|                            |                          | resilience is provided by     |
+|                            |                          | the TOE environment.          |
++----------------------------+--------------------------+-------------------------------+
+|                            |                          | Once granted legitimate       |
+|                            | Authenticated user of    | access, authenticated users   |
+|                            | the system must be       | are expected to use CGL       |
+|                            | adequately trained.      | resources and information     |
+|                            |  This enables the users  | only in accordance with the   |
+|                            | to effectively implement | organizational security       |
+|                            | organizational security  | policy.  In order for this    |
+| P.TRAINING                 | policies with respect to | to be possible, these users   |
+|                            | their discretionary      | must be adequately trained    |
+|                            | actions.  It also        | both to understand the        |
+|                            | supports the need for    | purpose and need for          |
+|                            | non-discretionary        | security controls and to be   |
+|                            | controls implemented to  | able to make secure           |
+|                            | enforce these policies.  | decisions with respect to     |
+|                            |                          | their discretionary           |
+|                            |                          | actions.                      |
++----------------------------+--------------------------+-------------------------------+
+|                            |                          | Linux systems must, in        |
+|                            | The organization's IT    | conjunction with its          |
+|                            | resources must be used   | environment, ensure that      |
+| P.USAGE                    | only for authorized      | the organization's            |
+|                            | purposes.                | information technology is     |
+|                            |                          | only used for authorized      |
+|                            |                          | purposes.                     |
++----------------------------+--------------------------+-------------------------------+
+|                            | The TOE must be able to  | Linux systems should limit    |
+|                            | mitigate the risks of    | the damage done by buffer     |
+|                            | common threats to the    | overflows and other common    |
+| P.CONTAINMENT              | integrity of             | attacks.  This is achieved    |
+|                            | applications and data    | through privilege             |
+|                            | caused by                | minimization and process      |
+|                            | security-relevant errors | containment mechanisms such   |
+|                            | in applications.         | as jails.                     |
++----------------------------+--------------------------+-------------------------------+
+|                            |                          | Linux systems should allow    |
+|                            | The TOE must be able to  | granting of privileges on a   |
+| P.PRIVILEGE-MIN            | run applications with a  | need-only basis. The          |
+|                            | minimal set of necessary | nothing-or-everything model   |
+|                            | privileges.              | of 'root' privileges is not   |
+|                            |                          | acceptable.                   |
++----------------------------+--------------------------+-------------------------------+
+|                            | The TOE must be          |                               |
+|                            | configured to provide    |                               |
+|                            | adequate segregation     | As per the requirements in    |
+| P.NET-SEGREGATION          | between the management,  | X.805, the planes should be   |
+|                            | control and end-user     | adequately segregated.        |
+|                            | planes, using separate   |                               |
+|                            | networks, cryptographic  |                               |
+|                            | methods, or both.        |                               |
++----------------------------+--------------------------+-------------------------------+
+|                            | If the TOE is part of a  | As per the requirements in    |
+|                            | cluster the              | X.805, the planes should be   |
+| P.CLUSTER-SEGREGATION      | intra-cluster traffic    | adequately segregated         |
+|                            | must be adequately       | including intra-cluster       |
+|                            | segregated from any      | traffic.                      |
+|                            | other traffic.           |                               |
++----------------------------+--------------------------+-------------------------------+
+|                            | The TOE must allow the   |                               |
+|                            | configuration of access  | Network resources should be   |
+|                            | controls on network      | segregated such that access   |
+| P.PROCESS-NET-SEGREGATION  | resources in such a way  | is limited to the planes      |
+|                            | that a process's network | required for the network      |
+|                            | access can be restricted | process’s operation.          |
+|                            | to the minimum subset    |                               |
+|                            | necessary.               |                               |
++----------------------------+--------------------------+-------------------------------+
+|                            | The TOE must allow the   | Limit the impact of process   |
+|                            | configuration of access  | subversion of a process       |
+| P.PROCESS-FILE-SEGRAGATION | controls on files in     | through buffer overflow       |
+|                            | such a way that the      | attacks, insertion attacks    |
+|                            | process can only access  | and other common attacks.     |
+|                            | necessary files.         |                               |
++----------------------------+--------------------------+-------------------------------+
+|                            | The TOE should log       | Information such as user      |
+| P.TRACEABLE-TOE            | sufficient information   | and process identifiers are   |
+|                            | for security-relevant    | needed for forensics and      |
+|                            | events.                  | log file analysis.            |
+|                            |                          |                               |
++----------------------------+--------------------------+-------------------------------+
+
+Security Threats
+----------------
+
+This section borrows from a published example Common Criteria protection
+profile. According to [CSPP-OS03] the following threats do not have to be
+addressed by the target of evaluation.  We believe that given some of the
+intended uses of this document we do need to address these two threats where
+possible.
+
++------------------------+-----------------------------------------------------------+
+| *Threat*               | *Description of Threat*                                   |
++------------------------+-----------------------------------------------------------+
+|                        | Access rights to specific data objects are determined by  |
+|                        | object attributes assigned to that object, user           |
+|                        | identity, user attributes, and environmental conditions   |
+|                        | as defined by the security policy                         |
++------------------------+-----------------------------------------------------------+
+| P.ACCESS               | Linux supports organizational policies that grant or      |
+|                        | deny access to objects using rules driven by attributes   |
+|                        | of the user (such as user identity), attributes of the    |
+|                        | object (such as permission bits), type of access (such    |
+|                        | as read or write), and environmental conditions (such as  |
+|                        | time-of-day).                                             |
++------------------------+-----------------------------------------------------------+
+|                        | Sophisticated denial of network attacks include such      |
+|                        | threats as:                                               |
+| T.DENIAL-SOPHISTICATED |                                                           |
+|                        |   * SYN flooding                                          |
+|                        |                                                           |
+|                        |   * IP fragmentation attacks                              |
++------------------------+-----------------------------------------------------------+
+|                        | Sophisticated technical attacks by unauthenticated        |
+|                        | users, such as:                                           |
+|                        |                                                           |
+|                        |   * Buffer overflow attacks                               |
+|                        |                                                           |
+| T.ENTRY-SOPHISTICATED  |   * Brute force or dictionary attacks on password         |
+|                        |                                                           |
+|                        |   * Network sniffing attacks                              |
+|                        |                                                           |
+|                        |   * Man-in-The-Middle attacks                             |
+|                        |                                                           |
+|                        |   * Session hijacking                                     |
++------------------------+-----------------------------------------------------------+
+
+The following threats must be addressed by the target of evaluation:
+
++-----------------------------+------------------------------------------------------+
+| *Threat*                    | *Description of Threat*                              |
++-----------------------------+------------------------------------------------------+
+|                             | An authorized user may gain non-malicious access to  |
+|                             | a resource or information controlled by the TOE.     |
+|                             | Such attacks include:                                |
+|                             |                                                      |
+| T.ACCESS-TOE                |   * Exploitation of improperly configured access     |
+|                             |     permissions.                                     |
+|                             |                                                      |
+|                             |   * Information exposure through system errors.      |
+|                             |                                                      |
+|                             |   * Simple exploitation of vulnerabilities.          |
++-----------------------------+------------------------------------------------------+
+|                             | Disclosure of security event records to              |
+|                             | unauthorized users or processes. This is caused by:  |
+|                             |                                                      |
+| T.AUDIT-CONFIDENTIALITY-TOE |   * Improperly configured permissions for log        |
+|                             |     files.                                           |
+|                             |                                                      |
+|                             |   * Exploitable SUID programs.                       |
++-----------------------------+------------------------------------------------------+
+|                             | Unauthorized modification or destruction of          |
+|                             | security event records. This is caused by:           |
+|                             |                                                      |
+| T.AUDIT-CORRUPTED-TOE       |   * Improperly configured access permissions for     |
+|                             |     log files.                                       |
+|                             |                                                      |
+|                             |   * Easily exploitable SUID programs.                |
++-----------------------------+------------------------------------------------------+
+| T.CRASH-TOE                 | Compromise of secure state when system crashes       |
+|                             | because the system does not fail securely.           |
++-----------------------------+------------------------------------------------------+
+|                             | Unsophisticated denial-of-service attacks.           |
+|                             |  Examples include:                                   |
+|                             |                                                      |
+| T.DENIAL-TOE                |  1. 5 Creating enough Telnet or SSH sessions to      |
+|                             |     lock out other users.                            |
+|                             |                                                      |
+|                             |  2. 6 Flood ping a system.                           |
++-----------------------------+------------------------------------------------------+
+|                             | Security compromise going undetected, for example:   |
+|                             |                                                      |
+|                             |  1. 7 The installation of a 'root kit'2 goes         |
+|                             |     undetected.                                      |
+| T.OBSERVE-TOE               |  2. 8 A buffer overflow and the following security   |
+|                             |     compromise goes undetected.                      |
+|                             |                                                      |
+|                             |  3. 9 Auditing is not configured to store all        |
+|                             |     relevant security events.                        |
++-----------------------------+------------------------------------------------------+
+|                             | Security-relevant events going unrecorded which is   |
+|                             | caused by:                                           |
+|                             |                                                      |
+| T.RECORD-EVENT-TOE          |   * Overloading the auditing system.                 |
+|                             |                                                      |
+|                             |   * Large quantities of log events that 'rotate'     |
+|                             |     files containing a security-relevant event out   |
+|                             |     of existence.                                    |
++-----------------------------+------------------------------------------------------+
+|                             | Exhaustion of system resources, which can be caused  |
+|                             | by:                                                  |
+|                             |                                                      |
+| T.RESOURCES                 |   * Failing to configure the system resource         |
+|                             |     limits for number of processes, memory or other  |
+|                             |     resources.                                       |
+|                             |                                                      |
+|                             |   * Underpowered systems.                            |
++-----------------------------+------------------------------------------------------+
+|                             | The security of the TOE is intentionally corrupted,  |
+|                             | enabling future attack. This can include back doors  |
+| T.TOE-CORRUPTED             | left by programmers or intentional improper          |
+|                             | configuration of security-relevant systems (e.g.     |
+|                             | through the use of unauthenticated install media)    |
++-----------------------------+------------------------------------------------------+
+
+Security Objectives
+===================
+
+Environmental Security Objectives
+---------------------------------
+
+According to [CSPP-OS03] the following set of threats does not have to be
+addressed by the OS (TOE) alone. The environment should also play a role in
+addressing these vulnerabilities:
+
+
++------------------------+--------------------------+----------------------------------+
+| *Objective*            | *Description*            | *Threat or Policy*               |
++------------------------+--------------------------+----------------------------------+
+|                        | The IT other then the    |                                  |
+|                        | TOE environment must     |                                  |
+|                        | provide sufficient       |                                  |
+|                        | protection against       |                                  |
+|                        | non-technical attacks by |                                  |
+|                        | authenticated users for  |                                  |
+|                        | non-malicious purposes.  |                                  |
+|                        | This will be             |                                  |
+| O.ACCESS-NON-TECHNICAL | accomplished primarily   | P.TRAINING                       |
+|                        | via prevention with a    |                                  |
+|                        | goal of high             |                                  |
+|                        | effectiveness. Personnel |                                  |
+|                        | security and user        |                                  |
+|                        | training and awareness   |                                  |
+|                        | will provide a major     |                                  |
+|                        | part of achieving this   |                                  |
+|                        | objective.               |                                  |
++------------------------+--------------------------+----------------------------------+
+|                        | The IT other then the    |                                  |
+|                        | TOE must provide public  |                                  |
+|                        | access and access by     |                                  |
+|                        | authenticated users to   |                                  |
+|                        | the resources and        |                                  |
+| O.ACCESS-NON-TOE       | actions for which they   | P.ACCESS                         |
+|                        | have been authorized and |                                  |
+|                        | over which the TOE does  |                                  |
+|                        | not exercise control.    |                                  |
+|                        | The focus is on          |                                  |
+|                        | prevention with a high   |                                  |
+|                        | degree of effectiveness. |                                  |
++------------------------+--------------------------+----------------------------------+
+|                        | The TOE must ensure, for | P.ACCOUNT                        |
+|                        | actions under its        |                                  |
+|                        | control or knowledge,    | T.TRACEABLE-NON-TOE              |
+|                        | that all users can       |                                  |
+| O.ACCOUNT-NON-TOE      | subsequently be held     | T.RECORD-EVENT-NON-TOE           |
+|                        | accountable for their    |                                  |
+|                        | security relevant        | T.AUDIT-CORRUPTED-NON-TOE        |
+|                        | actions. This is         |                                  |
+|                        | expected with a high     | T.AUDIT-CONFIDENTIALITY-NON-TOE  |
+|                        | degree of effectiveness. |                                  |
++------------------------+--------------------------+----------------------------------+
+|                        | The TOE must provide a   | P.DUE-CARE                       |
+|                        | reasonable, current set  |                                  |
+| O.APPLICATION-TOOLS    | of security tools and    | T.INSTALL                        |
+|                        | libraries for use by     |                                  |
+|                        | applications.            | T.OPERATE                        |
++------------------------+--------------------------+----------------------------------+
+|                        | The TOE must provide the |                                  |
+|                        | ability to specify and   |                                  |
+|                        | manage user and system   |                                  |
+|                        | process access rights to |                                  |
+|                        | individual processing    |                                  |
+|                        | resources and data       |                                  |
+|                        | elements under its       |                                  |
+|                        | control, supporting the  |                                  |
+|                        | organization’s security  |                                  |
+|                        | policy for access        |                                  |
+|                        | control. This is         |                                  |
+| O.AUTHORIZE-NON-TOE    | expected with a high     | P.ACCESS                         |
+|                        | degree of effectiveness. |                                  |
+|                        |                          |                                  |
+|                        | NOTE: This includes      |                                  |
+|                        | initializing, specifying |                                  |
+|                        | and managing (1) object  |                                  |
+|                        | security attributes, (2) |                                  |
+|                        | active entity identity   |                                  |
+|                        | and security attributes, |                                  |
+|                        | and (3) security         |                                  |
+|                        | relevant environmental   |                                  |
+|                        | conditions.              |                                  |
++------------------------+--------------------------+----------------------------------+
+|                        | The IT other than the    |                                  |
+|                        | TOE must protect itself  |                                  |
+|                        | from unsophisticated,    |                                  |
+|                        | denial-of-service        | P.SURVIVE                        |
+| O.AVAILABLE-NON-TOE    | attacks. This is a       |                                  |
+|                        | combination of           | T.DENIAL-NON-TOE                 |
+|                        | prevention and detection |                                  |
+|                        | and recover with a high  |                                  |
+|                        | degree of effectiveness. |                                  |
++------------------------+--------------------------+----------------------------------+
+|                        | For access not           |                                  |
+|                        | controlled by the TOE,   |                                  |
+|                        | IT other than the TOE    |                                  |
+|                        | must prevent errant or   |                                  |
+|                        | non-malicious,           |                                  |
+|                        | authorized software or   |                                  |
+|                        | users from bypassing or  |                                  |
+|                        | circumventing security   |                                  |
+|                        | policy enforcement. This |                                  |
+|                        | will be accomplished     | T.ACCESS-NON-TOE                 |
+| O.BYPASS-NON-TOE       | with high effectiveness. |                                  |
+|                        |                          |                                  |
+|                        | NOTE: This objective is  |                                  |
+|                        | limited to               |                                  |
+|                        | ‘non-malicious’ because  |                                  |
+|                        | IT controls in the       |                                  |
+|                        | notional CSPP system are |                                  |
+|                        | not expected to provide  |                                  |
+|                        | sufficient mitigation    |                                  |
+|                        | for the greater negative |                                  |
+|                        | impact that ‘malicious’  |                                  |
+|                        | implies.                 |                                  |
++------------------------+--------------------------+----------------------------------+
+|                        | The TOE environment must |                                  |
+|                        | provide the ability to   |                                  |
+|                        | detect sophisticated     | P.SURVIVE                        |
+| O.DETECT-SOPHISTICATED | attacks and the results  |                                  |
+|                        | of such attacks (e.g.,   | T.SYSTEM-CORRUPTED               |
+|                        | corrupted system state). |                                  |
+|                        | The goal is for moderate |                                  |
+|                        | effectiveness.           |                                  |
++------------------------+--------------------------+----------------------------------+
+|                        | The TOE environment must |                                  |
+|                        | provide sufficient       |                                  |
+|                        | protection against       |                                  |
+|                        | non-technical attacks by |                                  |
+|                        | other than authenticated |                                  |
+|                        | users. This will be      |                                  |
+| O.ENTRY-NON-TECHNICAL  | accomplished primarily   | P.TRAINING                       |
+|                        | via prevention with a    |                                  |
+|                        | goal of high             |                                  |
+|                        | effectiveness. User      |                                  |
+|                        | training and awareness   |                                  |
+|                        | will provide a major     |                                  |
+|                        | part of achieving this   |                                  |
+|                        | objective.               |                                  |
++------------------------+--------------------------+----------------------------------+
+|                        | For resources not        |                                  |
+|                        | controlled by the TOE,   |                                  |
+|                        | IT other than the TOE    |                                  |
+|                        | must prevent logical     |                                  |
+|                        | entry using              |                                  |
+|                        | unsophisticated,         | P.USAGE                          |
+| O.ENTRY-NON-TOE        | technical methods, by    |                                  |
+|                        | persons without          | T.ENTRY-NON-TOE                  |
+|                        | authority for such       |                                  |
+|                        | access. This is clearly  |                                  |
+|                        | a prevent focus and is   |                                  |
+|                        | to be achieved with a    |                                  |
+|                        | high degree of           |                                  |
+|                        | effectiveness.           |                                  |
++------------------------+--------------------------+----------------------------------+
+|                        | The TOE environment must |                                  |
+|                        | ensure that any          |                                  |
+|                        | information flow control |                                  |
+|                        | policies are enforced -  |                                  |
+|                        | (1) between system       |                                  |
+| O.INFO-FLOW            | components and (2) at    | P.INFO-FLOW                      |
+|                        | the system external      |                                  |
+|                        | interfaces. This will be |                                  |
+|                        | accomplished by          |                                  |
+|                        | preventing unauthorized  |                                  |
+|                        | flows with high          |                                  |
+|                        | effectiveness.           |                                  |
++------------------------+--------------------------+----------------------------------+
+|                        | The IT other than the    |                                  |
+|                        | TOE must ensure that,    |                                  |
+|                        | for all actions under    |                                  |
+|                        | its control and except   |                                  |
+|                        | for a well-defined set   |                                  |
+| O.KNOWN-NON-TOE        | of allowed actions, all  | P.KNOWN                          |
+|                        | users are identified and |                                  |
+|                        | authenticated before     |                                  |
+|                        | being granted access.    |                                  |
+|                        | This is expected with a  |                                  |
+|                        | high degree of           |                                  |
+|                        | effectiveness.           |                                  |
++------------------------+--------------------------+----------------------------------+
+|                        | The IT other than the    |                                  |
+|                        | TOE must ensure that its |                                  |
+|                        | security status is not   |                                  |
+|                        | misrepresented to the    |                                  |
+|                        | administrator or user.   |                                  |
+|                        | This is a combination of |                                  |
+| O.OBSERVE-NON-TOE      | prevent and detect and,  | T.OBSERVE-NON-TOE                |
+|                        | considering the          |                                  |
+|                        | potentially large number |                                  |
+|                        | of possible failure      |                                  |
+|                        | modes, is to be achieved |                                  |
+|                        | with a moderate, verses  |                                  |
+|                        | high, degree of          |                                  |
+|                        | effectiveness.           |                                  |
++------------------------+--------------------------+----------------------------------+
+|                        | Those responsible for    |                                  |
+|                        | the TOE must ensure that |                                  |
+|                        | those parts of the TOE   |                                  |
+|                        | critical to security     |                                  |
+|                        | policy are protected     | P.PHYSICAL                       |
+| O.PHYSICAL             | from physical attack     |                                  |
+|                        | that might compromise IT | T.PHYSICAL                       |
+|                        | security. This will be   |                                  |
+|                        | accomplished primarily   |                                  |
+|                        | via prevention with a    |                                  |
+|                        | goal of high             |                                  |
+|                        | effectiveness.           |                                  |
++------------------------+--------------------------+----------------------------------+
+
+TOE Security Objectives
+-----------------------
+
+
++-----------------+--------------------------------------+----------------------------+
+| *Objective*     | *Description*                        | *Threat or Policy*         |
++-----------------+--------------------------------------+----------------------------+
+|                 | The TOE must provide public access   |                            |
+|                 | and access by authenticated users to |                            |
+| O.ACCESS-TOE    | those TOE resources and actions for  | P.ACCESS                   |
+|                 | which they have been authorized.     |                            |
+|                 | This will be accomplished with high  |                            |
+|                 | effectiveness.                       |                            |
++-----------------+--------------------------------------+----------------------------+
+|                 | The TOE must ensure, for actions     | P.ACCOUNT                  |
+|                 | under its control or knowledge, that |                            |
+|                 | all TOE users can subsequently be    | T.TRACEABLE-TOE            |
+|                 | held accountable for their security  |                            |
+| O.ACCOUNT-TOE   | relevant actions. This will be done  | T.RECORD-EVENT-TOE         |
+|                 | with moderate effectiveness, in that |                            |
+|                 | it is anticipated that individual    | T.AUDIT-CORRUPTED-TOE      |
+|                 | accountability might not be achieved |                            |
+|                 | for some actions.                    | T.AUDIT-CONFIDENTIALITYTOE |
++-----------------+--------------------------------------+----------------------------+
+|                 | The TOE must provide the ability to  |                            |
+|                 | specify and manage user and system   |                            |
+|                 | process access rights to individual  |                            |
+|                 | processing resources and data        |                            |
+| O.AUTHORIZE-TOE | elements under its control,          | P.ACCESS                   |
+|                 | supporting the organization’s        |                            |
+|                 | security policy for access control.  |                            |
+|                 | This will be accomplished with high  |                            |
+|                 | effectiveness.                       |                            |
++-----------------+--------------------------------------+----------------------------+
+|                 | The TOE must protect itself from     |                            |
+|                 | unsophisticated, denial-of-service   | P.SURVIVE                  |
+| O.AVAILABLE-TOE | attacks. This will include a         |                            |
+|                 | combination of protection and        | T.DENIAL-TOE               |
+|                 | detection with high effectiveness.   |                            |
++-----------------+--------------------------------------+----------------------------+
+|                 | The TOE must prevent errant or       |                            |
+|                 | non-malicious, authorized software   |                            |
+|                 | or users from bypassing or           |                            |
+|                 | circumventing TOE security policy    |                            |
+|                 | enforcement. This will be            |                            |
+|                 | accomplished with high               |                            |
+| O.BYPASS-TOE    | effectiveness.                       | T.ACCESS-TOE               |
+|                 |                                      |                            |
+|                 | NOTE: This objective is limited to   |                            |
+|                 | ‘non-malicious’ because CSPP-OS      |                            |
+|                 | controls are not expected to be      |                            |
+|                 | sufficient mitigation for the        |                            |
+|                 | greater negative impact that         |                            |
+|                 | ‘malicious’ implies.                 |                            |
++-----------------+--------------------------------------+----------------------------+
+|                 | The TOE must enable the detection of | P.SURVIVE                  |
+| O.DETECT-TOE    | TOE specific insecurities. The goal  |                            |
+|                 | is high effectiveness for lower      | T.TOE-CORRUPTED            |
+|                 | grade attacks.                       |                            |
++-----------------+--------------------------------------+----------------------------+
+|                 | The TOE must prevent logical entry   |                            |
+|                 | to the TOE using unsophisticated,    | P.USAGE                    |
+| O.ENTRY-TOE     | technical methods, by persons        |                            |
+|                 | without authority for such access.   | T.ENTRY-TOE                |
+|                 | This will be accomplished with high  |                            |
+|                 | effectiveness.                       |                            |
++-----------------+--------------------------------------+----------------------------+
+|                 | The TOE must ensure that, for all    |                            |
+|                 | actions under its control and except |                            |
+|                 | for a well-defined set of allowed    |                            |
+| O.KNOWN-TOE     | actions, all users are identified    | P.KNOWN                    |
+|                 | and authenticated before being       |                            |
+|                 | granted access. This will be         |                            |
+|                 | accomplished with high               |                            |
+|                 | effectiveness.                       |                            |
++-----------------+--------------------------------------+----------------------------+
+|                 | The TOE must ensure that its         |                            |
+|                 | security status is not               |                            |
+|                 | misrepresented to the administrator  |                            |
+|                 | or user. This is a combination of    |                            |
+| O.OBSERVE-TOE   | prevent and detect and, considering  | T.OBSERVE-TOE              |
+|                 | the potentially large number of      |                            |
+|                 | possible failure modes, is to be     |                            |
+|                 | achieved with a moderate, verses     |                            |
+|                 | high, degree of effectiveness.       |                            |
++-----------------+--------------------------------------+----------------------------+
+|                 | The TOE must provide for recovery to |                            |
+|                 | a secure state following a system    |                            |
+|                 | failure, discontinuity of service,   | P.SURVIVE                  |
+| O.RECOVER-TOE   | or detection of an insecurity. This  |                            |
+|                 | will be accomplished with a high     | T.CRASH-TOE                |
+|                 | effectiveness for specified failures |                            |
+|                 | and a low effectiveness for failures |                            |
+|                 | in general.                          |                            |
++-----------------+--------------------------------------+----------------------------+
+|                 | The TOE must protect itself from     |                            |
+|                 | user or system errors that result in | P.SURVIVE                  |
+| O.RESOURCES     | shared resource exhaustion. This     |                            |
+|                 | will be accomplished via protection  | T.RESOURCES                |
+|                 | with high effectiveness.             |                            |
++-----------------+--------------------------------------+----------------------------+
+
+Joint Security Objectives
+-------------------------
+
++------------------------+-----------------------------------+-------------------------+
+| *Objective*            | *Description*                     | *Threat or Policy*      |
++------------------------+-----------------------------------+-------------------------+
+|                        | The TOE controls will help in     |                         |
+|                        | achieving this objective, but     |                         |
+|                        | will not be sufficient.           |                         |
+|                        | Additional, environmental         |                         |
+|                        | controls are required to          |                         |
+| O.ACCESS-MALICIOUS     | sufficiently mitigate the threat  | T.ACCESS-MALICIOUS      |
+|                        | of malicious actions by           |                         |
+|                        | authenticated users. This will be |                         |
+|                        | accomplished by focusing on       |                         |
+|                        | deterrence, detection, and        |                         |
+|                        | response with a goal of moderate  |                         |
+|                        | effectiveness.                    |                         |
++------------------------+-----------------------------------+-------------------------+
+|                        | The TOE environment, in           |                         |
+|                        | conjunction with controls         |                         |
+|                        | implemented by the TOE, must      |                         |
+|                        | support full compliance with      |                         |
+|                        | applicable laws, regulations, and |                         |
+| O.COMPLY               | contractual agreements. This will | P.COMPLY                |
+|                        | be accomplished via some          |                         |
+|                        | technical controls, yet with a    |                         |
+|                        | focus on non-technical controls   |                         |
+|                        | to achieve this objective with    |                         |
+|                        | high effectiveness.               |                         |
++------------------------+-----------------------------------+-------------------------+
+|                        | The TOE, in conjunction with      |                         |
+|                        | other IT in the system, must      | P.SURVIVE               |
+| O.DETECT-SYSTEM        | enable the detection of system    |                         |
+|                        | insecurities. The goal is high    | T.SYSTEM-CORRUPTED      |
+|                        | effectiveness for lower grade     |                         |
+|                        | attacks.                          |                         |
++------------------------+-----------------------------------+-------------------------+
+|                        | The TOE environment, in           |                         |
+|                        | conjunction with the TOE itself,  |                         |
+|                        | must be implemented and operated  |                         |
+|                        | in a manner that clearly          |                         |
+|                        | demonstrates due-care and         |                         |
+|                        | diligence with respect to         |                         |
+| O.DUE-CARE             | IT-related risks to the           | P.DUE-CARE              |
+|                        | organization. This will be        |                         |
+|                        | accomplished via a combination of |                         |
+|                        | technical and non-technical       |                         |
+|                        | controls to achieve this          |                         |
+|                        | objective with high               |                         |
+|                        | effectiveness.                    |                         |
++------------------------+-----------------------------------+-------------------------+
+|                        | Those responsible for the system  |                         |
+|                        | (in conjunction with mechanisms   |                         |
+|                        | provided by the TOE) must ensure  |                         |
+| O.MANAGE               | that it is managed and            | T.ADMIN-ERROR           |
+|                        | administered in a manner that     |                         |
+|                        | maintains IT security. This will  |                         |
+|                        | be accomplished with moderate     |                         |
+|                        | effectiveness.                    |                         |
++------------------------+-----------------------------------+-------------------------+
+|                        | The system must be able to meet   |                         |
+|                        | its security objectives in a      |                         |
+| O.NETWORK              | distributed environment. This     | P.NETWORK               |
+|                        | will be accomplished with high    |                         |
+|                        | effectiveness.                    |                         |
++------------------------+-----------------------------------+-------------------------+
+|                        | Those responsible for the system  |                         |
+|                        | (in conjunction with mechanisms   |                         |
+|                        | provided by the TOE) must ensure  | T.INSTALL               |
+|                        | that the system is delivered,     |                         |
+| O.OPERATE              | installed, and operated in a      | T.OPERATE               |
+|                        | manner which maintains IT         |                         |
+|                        | security. This will be            | P.TRAINING              |
+|                        | accomplished with moderate        |                         |
+|                        | effectiveness.                    |                         |
++------------------------+-----------------------------------+-------------------------+
+|                        | The system must provide for       |                         |
+|                        | recovery to a secure state        |                         |
+|                        | following a system failure,       |                         |
+|                        | discontinuity of service, or      |                         |
+|                        | detection of an insecurity. This  | P.SURVIVE               |
+| O.RECOVER-SYSTEM       | will be accomplished with some    |                         |
+|                        | prevention and a majority of      | T.CRASH-SYSTEM          |
+|                        | detect and respond, with high     |                         |
+|                        | effectiveness for specified       |                         |
+|                        | failures. For general failure,    |                         |
+|                        | this will be accomplished with    |                         |
+|                        | low effectiveness.                |                         |
++------------------------+-----------------------------------+-------------------------+
+|                        | The TOE and the environment must  |                         |
+|                        | sufficiently mitigate the threat  |                         |
+|                        | of an individual unauthenticated  |                         |
+|                        | user gaining unauthorized access  |                         |
+| O.ENTRY-SOPHISTICATED  | via sophisticated, technical      | T.ENTRY-SOPHISTICATED   |
+|                        | attack. This is accomplished by   |                         |
+|                        | focusing on prevention, detection |                         |
+|                        | and response with a goal of high  |                         |
+|                        | effectiveness.                    |                         |
++------------------------+-----------------------------------+-------------------------+
+|                        | The TOE and the environment must  |                         |
+|                        | maintain system availability in   |                         |
+|                        | the face of sophisticated         | P.SURVIVE               |
+| O.DENIAL-SOPHISTICATED | denial-of-service attacks. The    |                         |
+|                        | focus is on prevention, detection | T.DENIAL-SOPHISTICATED  |
+|                        | and response with a goal of high  |                         |
+|                        | effectiveness.                    |                         |
++------------------------+-----------------------------------+-------------------------+
+|                        | The TOE and the environment must  |                         |
+|                        | provide the ability to detect     | P.SURVIVE               |
+| O.DETECT-SOPHISTICATED | sophisticated attacks and the     |                         |
+|                        | results of such attacks such as   | T.SYSTEM-CORRUPTED      |
+|                        | corrupted system state. The goal  |                         |
+|                        | is for high effectiveness.        |                         |
++------------------------+-----------------------------------+-------------------------+
+|                        |                                   | P.CONTAINMENT           |
+|                        | The TOE and the environment must  |                         |
+|                        | provide the ability to constrain  | P.PRIVILEGE-MIN         |
+| O.CONTAINMENT          | the effect of a security failure  |                         |
+|                        | of an application to that         | P.SURVIVE               |
+|                        | application.                      |                         |
+|                        |                                   | T.SYSTEM-CORRUPTED      |
++------------------------+-----------------------------------+-------------------------+
+
+Security References
+===================
+
+  * ITU03: ITU-T, Security in Telecommunications and Information Technology,
+    2003 
+
+  * CSPP-OS03: Gary Stoneburner, COTS Security Protection Profile - Operating
+    Systems (CSPP-OS), 20 
+
+
+Hardware Requirements Definition
+................................
+
+To stay competitive and profitable in the telecommunication industry, standards-
+based, modular, commercial-off- the-shelf (COTS) hardware components are being
+used along with open software, including operating systems, middleware, and
+applications. A goal of the CGL working group is to promote the migration of the
+telecommunication industry from the proprietary hardware platforms to COTS
+hardware by insuring that the Linux environment provides adequate support for
+these COTS platforms. The CGL Hardware Requirements Definition – Version 4.0
+identifies a set of widely-used industry hardware platforms and defines the
+support that is needed in the operating system for these platforms. The scope of
+these hardware requirements applies to the Linux kernel, kernel interfaces (APIs
+and libraries), system software, and tools.
+
+This section specifies a set of generic requirements that are common across
+platform types. It includes support for blade servers, for hardware management
+interfaces, and for blade hot swap events. To address the need to manage highly
+available carrier grade systems through hardware out-of-band mechanisms,
+management capabilities such as those found in the Intelligent Platform
+Management Interface (IPMI) are also described.
+
+Carrier-grade systems require high performance and high throughput
+interconnections within a system and between system nodes. Hardware-related
+requirements, such as PCI Express support, and PCI Express Device Hot Plug, are
+included. Other hardware related requirements such as a CPU throttle mechanism,
+iSCSI Initiator Support”, and “iSCSI Target Discovery” are also specified.
+
+Considering the diversity of hardware platforms used in a carrier grade
+environment, the CGL Hardware Requirements Definition - Version 4.0 does not
+define requirements for just one type of industry platform. Instead it defines
+generic platform requirements and then provides an “Industry Platforms” section
+to provide implementation guidelines for specific architectures. Examples of
+such industry platforms include AdvancedTCA, BladeCenter, CompactPCI and rack
+mount types of servers.
+
++-----------------------------+-----------------------------+
+| **HARDWARE SUB-CATEGORIES**                               |
++-----------------------------+-----------------------------+
+| *Requirement Sub-Category*  |  *Sub-Category Description* |
++-----------------------------+-----------------------------+
+| PLT                         |  General Platform           |
++-----------------------------+-----------------------------+
+| PIC                         |  Platform Interconnect      |
++-----------------------------+-----------------------------+
+| PMT                         |  Platform Management        |
++-----------------------------+-----------------------------+
+| PMS                         |  Platform Miscellaneous     |
++-----------------------------+-----------------------------+
+
 Hardware Requirements
 =====================
-.. |plt| replace:: Hardware
 
 PMS.1.0 CPU Throttle
 --------------------
@@ -3071,4 +5482,128 @@ PMS.5.3 iSCSI Target Discovery
 |  potential iSCSI targets they can connect. See STD.17.0 iSCSI.               |
 +---------------+-------------------------------------+-------------+----------+
 
+Hardware References
+===================
+
+This section provides background information for some of the hardware referred
+to in this specification.
+
+   * Intelligent Platform Management Interface (IPMI) Specifications:
+     http://developer.intel.com/design/servers/ipmi
+
+   * PCI Express at the PCI-SIG web site: http://www.pcisig.com/
+
+   * Intel® Developer Network for PCI Express Architecture:
+     http://www.express-lane.org
+
+   * Advanced Switching (ASI-SIG web site): http://www.asi-sig.com/
+
+   * Rapid I/O: http://www.rapidio.org
+
+   * Advanced Configuration and Power Interface (ACPI): http://www.acpi.info/
+
+.. |avl| replace:: Availability
 .. |PoC| replace:: Proof-of-Concept
+.. |clu| replace:: Cluster
+.. |ser| replace:: Serviceability 
+.. |per| replace:: Performance 
+.. |std| replace:: Standards 
+.. |sec| replace:: Security
+.. |plt| replace:: Hardware
+
+.. _1155: http://www.ietf.org/rfc/rfc1155.txt
+.. _1157: http://www.ietf.org/rfc/rfc1155.txt
+.. _1901: http://www.ietf.org/rfc/rfc1901.txt
+.. _1908: http://www.ietf.org/rfc/rfc1908.txt
+.. _1213: http://www.ietf.org/rfc/rfc1213.txt
+.. _1227: http://www.ietf.org/rfc/rfc1227.txt
+.. _1886: http://www.ietf.org/rfc/rfc1886.txt
+.. _1981: http://www.ietf.org/rfc/rfc1981.txt
+.. _2011: http://www.ietf.org/rfc/rfc2011.txt
+.. _2012: http://www.ietf.org/rfc/rfc2012.txt
+.. _2013: http://www.ietf.org/rfc/rfc2013.txt
+.. _2096: http://www.ietf.org/rfc/rfc2096.txt
+.. _2367: http://www.ietf.org/rfc/rfc2367.txt
+.. _2401: http://www.ietf.org/rfc/rfc2401.txt
+.. _2402: http://www.ietf.org/rfc/rfc2402.txt
+.. _2403: http://www.ietf.org/rfc/rfc2403.txt
+.. _2404: http://www.ietf.org/rfc/rfc2404.txt
+.. _2405: http://www.ietf.org/rfc/rfc2405.txt
+.. _2406: http://www.ietf.org/rfc/rfc2406.txt
+.. _2409: http://www.ietf.org/rfc/rfc2409.txt
+.. _2410: http://www.ietf.org/rfc/rfc2410.txt
+.. _2428: http://www.ietf.org/rfc/rfc2428.txt
+.. _2451: http://www.ietf.org/rfc/rfc2451.txt
+.. _2452: http://www.ietf.org/rfc/rfc2452.txt
+.. _2454: http://www.ietf.org/rfc/rfc2454.txt
+.. _2460: http://www.ietf.org/rfc/rfc2460.txt
+.. _2461: http://www.ietf.org/rfc/rfc2461.txt
+.. _2462: http://www.ietf.org/rfc/rfc2462.txt
+.. _2463: http://www.ietf.org/rfc/rfc2463.txt
+.. _2465: http://www.ietf.org/rfc/rfc2465.txt
+.. _2012: http://www.ietf.org/rfc/rfc2012.txt
+.. _2466: http://www.ietf.org/rfc/rfc2466.txt
+.. _2474: http://www.ietf.org/rfc/rfc2474.txt
+.. _2475: http://www.ietf.org/rfc/rfc2475.txt
+.. _2527: http://www.ietf.org/rfc/rfc2527.txt
+.. _2571: http://www.ietf.org/rfc/rfc2571.txt
+.. _2575: http://www.ietf.org/rfc/rfc2575.txt
+.. _2576: http://www.ietf.org/rfc/rfc2576.txt
+.. _2578: http://www.ietf.org/rfc/rfc2578.txt
+.. _2579: http://www.ietf.org/rfc/rfc2579.txt
+.. _2580: http://www.ietf.org/rfc/rfc2580.txt
+.. _2585: http://www.ietf.org/rfc/rfc2585.txt
+.. _2665: http://www.ietf.org/rfc/rfc2665.txt
+.. _2710: http://www.ietf.org/rfc/rfc2710.txt
+.. _2742: http://www.ietf.org/rfc/rfc2742.txt
+.. _2788: http://www.ietf.org/rfc/rfc2788.txt
+.. _2789: http://www.ietf.org/rfc/rfc2789.txt
+.. _2790: http://www.ietf.org/rfc/rfc2790.txt
+.. _2819: http://www.ietf.org/rfc/rfc2819.txt
+.. _2856: http://www.ietf.org/rfc/rfc2856.txt
+.. _2863: http://www.ietf.org/rfc/rfc2863.txt
+.. _2864: http://www.ietf.org/rfc/rfc2864.txt
+.. _2874: http://www.ietf.org/rfc/rfc2874.txt
+.. _2893: http://www.ietf.org/rfc/rfc2893.txt
+.. _2960: http://www.ietf.org/rfc/rfc2960.txt
+.. _3165: http://www.ietf.org/rfc/rfc3165.txt
+.. _3231: http://www.ietf.org/rfc/rfc3231.txt
+.. _3270: http://www.ietf.org/rfc/rfc3270.txt
+.. _3279: http://www.ietf.org/rfc/rfc3279.txt
+.. _3280: http://www.ietf.org/rfc/rfc3280.txt
+.. _3291: http://www.ietf.org/rfc/rfc3291.txt
+.. _3309: http://www.ietf.org/rfc/rfc3309.txt
+.. _3315: http://www.ietf.org/rfc/rfc3315.txt
+.. _3411: http://www.ietf.org/rfc/rfc3411.txt
+.. _3412: http://www.ietf.org/rfc/rfc3412.txt
+.. _3413: http://www.ietf.org/rfc/rfc3413.txt
+.. _3414: http://www.ietf.org/rfc/rfc3414.txt
+.. _3415: http://www.ietf.org/rfc/rfc3415.txt
+.. _3417: http://www.ietf.org/rfc/rfc3417.txt
+.. _3418: http://www.ietf.org/rfc/rfc3418.txt
+.. _3484: http://www.ietf.org/rfc/rfc3484.txt
+.. _3493: http://www.ietf.org/rfc/rfc3493.txt
+.. _3542: http://www.ietf.org/rfc/rfc3542.txt
+.. _3587: http://www.ietf.org/rfc/rfc3587.txt
+.. _3588: http://www.ietf.org/rfc/rfc3588.txt
+.. _3596: http://www.ietf.org/rfc/rfc3596.txt
+.. _3633: http://www.ietf.org/rfc/rfc3633.txt
+.. _3646: http://www.ietf.org/rfc/rfc3646.txt
+.. _3720: http://www.ietf.org/rfc/rfc3720.txt
+.. _3721: http://www.ietf.org/rfc/rfc3721.txt
+.. _3723: http://www.ietf.org/rfc/rfc3723.txt
+.. _3758: http://www.ietf.org/rfc/rfc3758.txt
+.. _3775: http://www.ietf.org/rfc/rfc3775.txt
+.. _3776: http://www.ietf.org/rfc/rfc3776.txt
+.. _3810: http://www.ietf.org/rfc/rfc3810.txt
+.. _3873: http://www.ietf.org/rfc/rfc3873.txt
+.. _4191: http://www.ietf.org/rfc/rfc4191.txt
+.. _4213: http://www.ietf.org/rfc/rfc4213.txt
+.. _4301: http://www.ietf.org/rfc/rfc4301.txt
+.. _4302: http://www.ietf.org/rfc/rfc4302.txt
+.. _4303: http://www.ietf.org/rfc/rfc4303.txt
+.. _4305: http://www.ietf.org/rfc/rfc4305.txt
+.. _4307: http://www.ietf.org/rfc/rfc4307.txt
+.. _4322: http://www.ietf.org/rfc/rfc4322.txt
+.. _4434: http://www.ietf.org/rfc/rfc4434.txt
+.. _4460: http://www.ietf.org/rfc/rfc4460.txt

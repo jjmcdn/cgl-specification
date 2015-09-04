@@ -26,8 +26,10 @@
 
   pageTemplates:
     coverPage:
-        frames: []
-            [0cm, 0cm, 100%, 100%]
+        frames: [
+            [0cm, 66.66%, 100%, 33.34%],
+            [0cm, 0cm, 100%, 55%]
+            ]
         showHeader : false
         showFooter : false
 
@@ -87,7 +89,7 @@
     base:
       parent: null
       fontName: stdFont
-      fontSize: 9
+      fontSize: 10
       leading: 12
       leftIndent: 0
       rightIndent: 0
@@ -96,7 +98,7 @@
       spaceBefore: 0
       spaceAfter: 0
       bulletFontName: stdFont
-      bulletFontSize: 9
+      bulletFontSize: 10
       bulletIndent: 0
       textColor: black
       backColor: null
@@ -283,7 +285,7 @@
                     [LEFTPADDING, [ 0, 0 ], [ -1, -1 ], 0 ]
                     [BOTTOMPADDING, [ 0, 0 ], [ -1, -1 ], 0 ]
                     [RIGHTPADDING, [ 0, 0 ], [ -1, -1 ], 0 ]
-                    
+
     fieldname:
       parent: bodytext
       alignment: TA_RIGHT
@@ -310,10 +312,10 @@
     title:
       parent: heading
       fontName: stdBold
-      fontSize: 200%
+      fontSize: 300%
       alignment: TA_LEFT
       keepWithNext: false
-      spaceAfter: 10
+      textColor: black
 
     subtitle:
       parent: title
@@ -577,7 +579,7 @@
         parent: bodytext
         alignment: TA_LEFT
         fontSize: 60%
-        
+
 
     field-list:
         parent: bodytext
@@ -592,4 +594,12 @@
             [VALIGN, [ 0, 0 ], [ -1, -1 ], TOP ]
             [TOPPADDING, [ 0, 0 ], [ -1, -1 ], 0 ]
         colWidths: [null,null]
+
+    table-address:
+        commands: []
+            [VALIGN, [ 0, 0 ], [ -1, -1 ], TOP ]
+            [ROWBACKGROUNDS, [0, 0], [-1, -1], [white]]
+            [BOTTOMPADDING, [0, 1], [-1, -1], 0]
+            [TOPPADDING, [0, 1], [-1, -1], 0]
+            [ALIGN, [ 0, 0 ], [ -1, -1 ], LEFT ]
 
