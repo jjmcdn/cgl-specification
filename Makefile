@@ -31,7 +31,12 @@ RST2HTMLOPTS = \
 					--table-style=borderless \
 					--toc-entry-backlinks
 
-all: specification requirements gaps deprecated
+all: testing specification requirements gaps deprecated
+
+testing: testing.stamp
+	rst2odt ${RST2ODTOPTS} --title "CGL 5.0.1(draft) Testing Documentation Requirements" cgl_5.0_testing-documentation.rst cgl_5.0_testing-documentation.odt
+	rst2pdf $(RST2PDFOPTS) cgl_5.0_testing-documentation.rst -o cgl_5.0_testing-documentation.pdf
+	rst2html $(RST2HTMLOPTS) cgl_5.0_testing-documentation.rst cgl_5.0_testing-documentation.html
 
 specification: specification.stamp
 	rst2odt ${RST2ODTOPTS} --title "CGL 5.0.1(draft) Requirements" cgl_5.0_specification.rst cgl_5.0_specification.odt
@@ -52,6 +57,9 @@ deprecated: deprecated.stamp
 	rst2odt ${RST2ODTOPTS} --title "CGL 5.0.1(draft) Deprecated Requirements" cgl_5.0_deprecated.rst cgl_5.0_deprecated.odt
 	rst2pdf $(RST2PDFOPTS) cgl_5.0_deprecated.rst -o cgl_5.0_deprecated.pdf
 	rst2html $(RST2HTMLOPTS) cgl_5.0_deprecated.rst cgl_5.0_deprecated.html
+
+testing.stamp:
+		touch .testing.stamp
 
 specification.stamp:
 		touch .specification.stamp
