@@ -2781,23 +2781,18 @@ STD.1.0 Linux Standard Base Compliance
 +===============+=====================================+=============+==========+
 | STD.1.0       | Linux Standard Base Compliance      |    |std|    |    P1    |
 +---------------+-------------------------------------+-------------+----------+
-|  http://www.linuxbase.org CGL specifies that carrier grade                   |
-|  Linux shall be compliant with the Linux Standard Base (LSB) 3.0 The LSB     |
-|  3.0 specification has been split into a generic LSB core, a generic         |
-|  module for C++, and a set of architecture specific modules. Required LSB    |
-|  3.0 modules for CGL are:                                                    |
+|  http://www.linuxbase.org CGL specifies that carrier grade Linux shall be    |
+|  compliant with the Linux Standard Base (LSB) 5.0 The LSB 5.0 specification  |
+|  has been split into several modules.  Required LSB 5.0 modules for CGL are: |
 |                                                                              |
 |  - Generic LSB-Core                                                          |
 |                                                                              |
-|  - Generic LSB-CXX                                                           |
-|                                                                              |
-|  - For each supported architecture, one LSB-Core module and one LSB-CXX      |
-|    module                                                                    |
+|  - For each supported architecture, one LSB-Core module                      |
 |                                                                              |
 |  The developer may choose to implement more than one architecture            |
 |  platform. In this case, each supported architecture platform shall          |
 |  contain an implementation of at least one architecture specific LSB-Core    |
-|  module and one architecture specific LSB-CXX module.                        |
+|  module.                                                                     |
 +---------------+-------------------------------------+-------------+----------+
 
 STD.3.1 SCTP - Base Features
